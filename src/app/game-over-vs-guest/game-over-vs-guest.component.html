@@ -1,0 +1,27 @@
+<div id="gameOverVsGuest" [style.height.px]="windowHeight">
+  <div *ngIf = "resultUser[0] > resultRival[0]; then winGame"></div>
+  <div *ngIf = "resultUser[0] < resultRival[0]; then lossGame"></div>
+  <div *ngIf = "resultUser[0] == resultRival[0]; then drawGame"></div>
+
+    <ng-template #winGame>
+      <div class="element" style="padding-top:10%;">ZWYCIĘSTWO!</div>
+
+      </ng-template>
+    <ng-template #lossGame>
+      <div class="element" style="padding-top:10%;text-align:center">PORAŻKA!</div>
+
+      </ng-template>
+    <ng-template #drawGame>
+      <div class="element" style="padding-top:10%;">REMIS!</div>
+
+      </ng-template>
+      <div class="element">
+          {{userTeam[0]}}<img style = "height:20px;width:20px;" src={{userFlag[0]}}> (<span style="color:red;padding-right:2px">{{userName[0]}}</span>)  <span style="color:yellow;padding-right:2px"> vs </span> {{rivalTeam[0]}}<img style = "height:20px;width:20px;" src={{rivalFlag[0]}}> (<span style="color:red;padding-right:2px">{{rivalName[0]}}</span>)
+      </div>
+    <div class="element">
+      {{resultUser[0]}}:{{resultRival[0]}}({{resultFirstHalfUser[0]}}:{{resultFirstHalfRival[0]}})
+      </div>
+      <div class="element">
+        <button type="button" class="btn btn-info" (click)="back()">Powrót</button>
+      </div>
+    </div>

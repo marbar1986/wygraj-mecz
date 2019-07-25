@@ -1,0 +1,32 @@
+#logged{
+  background-image: url('../../assets/area7.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.logOut{
+  display: flex;
+  justify-content: space-between;
+}
+
+.element{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color:white;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 0 0 3px darkgrey, 0 0 5px black;
+  text-transform: uppercase;
+  padding-top: 1%;
+}
+
+
+.btn-size{
+  width:60px;
+  height:12px;
+  font-size: 10px;
+  line-height: 0px;
+  text-align: left;
+}

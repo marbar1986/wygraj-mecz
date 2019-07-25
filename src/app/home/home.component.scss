@@ -1,0 +1,15 @@
+
+.element{
+  display: flex;
+  justify-content: center;
+  text-shadow: 0 0 3px darkgrey, 0 0 5px black;
+  color:white;
+  padding-top: 1%;
+}
+
+.startPage{
+  background-image: url('../../assets/background1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}

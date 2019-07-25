@@ -1,0 +1,28 @@
+export interface Guest{
+  id?:number;
+  name?:string;
+  team?:string;
+  activeGame?:boolean;
+  rival?:string;
+  rivalFlag?:string;
+  rivalName?:string;
+  rivalTeam?:string;
+  turn?:boolean;
+  half?:number;
+  halfDeffend?:number;
+  firstHalf?:Array<any>;
+  round?:string;
+  secondHalf?:number;
+  numberOfAction?:number;
+  questions?:Array<number>;
+  answers?:Array<boolean>;
+  goal?:Array<number>;
+  quart?:number;
+  scoredFirsthalf?:number;
+  scoredSecondHalf?:number;
+  scoredFirsthalfRival?:number;
+  scoredSecondHalfRival?:number;
+  lastResult?:any;
+  lastHalfResult?:any;
+  endMatch?:boolean;
+}

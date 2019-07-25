@@ -1,0 +1,82 @@
+<div id="register" [style.height.px]="windowHeight">
+<div class="backButton">
+<button type="button" class="btn btn-info" routerLink="/gamechosse">powrót</button>
+  </div>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <div class="element">
+    Nazwa Menadżera:
+  </div>
+  <label class="element">
+    <input type="text" formControlName="name">
+  </label>
+  <div class="element">
+    <div *ngIf="profileForm.get('name').invalid"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Pole Wymagane!</sup></div>
+  </div>
+  <div class="element">
+    <div *ngIf="profileForm.get('name').errors && profileForm.get('name').errors.minlength"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Min. 6 Znaków!</sup></div>
+  </div>
+
+  <div class="element">
+    e-mail:
+  </div>
+  <label class="element">
+    <input type="email" formControlName="email">
+  </label>
+  <div class="element">
+    <div *ngIf="profileForm.get('email').invalid"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Pole Wymagane!</sup></div>
+  </div>
+  <div class="element">
+    <div *ngIf="profileForm.get('email').errors && profileForm.get('email').errors.email"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Niepoprawny adres email!</sup></div>
+  </div>
+
+
+  <div class="element">
+    hasło:
+  </div>
+  <label class="element">
+    <input type="password" formControlName="password">
+  </label>
+  <div class="element">
+    <div *ngIf="profileForm.get('password').invalid"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Pole Wymagane!</sup></div>
+  </div>
+  <div class="element">
+    <div *ngIf="profileForm.get('password').errors && profileForm.get('password').errors.minlength"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Min. 8 znaków!</sup></div>
+  </div>
+
+
+  <div class="element">
+    powtórz hasło:
+  </div>
+  <label class="element">
+    <input type="password" formControlName="repeatPassword">
+  </label>
+  <div class="element">
+    <div *ngIf="profileForm.get('repeatPassword').invalid"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Pole Wymagane!</sup></div>
+  </div>
+  <div class="element">
+    <div *ngIf="profileForm.get('repeatPassword').dirty && profileForm.get('repeatPassword').value != profileForm.get('password').value"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Hasła nie są takie same!</sup></div>
+  </div>
+
+  <div class="element">
+    Drużyna:
+  </div>
+  <label class="element">
+    <select formControlName="team">
+    <option *ngFor="let team of teams" [value]="team">{{team}}</option>
+  </select>
+  </label>
+  <div class="element">
+    <div *ngIf="profileForm.get('team').invalid"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Pole Wymagane!</sup></div>
+  </div>
+
+  <div class="element" style="padding-top:2%">
+    <button type="submit" [disabled]="!profileForm.valid" class="btn btn-danger">Zarejestruj</button>
+  </div>
+  <div class="element">
+    <span style="font-size:20px;color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">{{warning}}</span>
+  </div>
+</form>
+
+
+  </div>

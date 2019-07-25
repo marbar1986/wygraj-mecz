@@ -1,0 +1,23 @@
+#gameGuest{
+  background-image: url('../../assets/area3.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.backButton{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.element{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color:white;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 0 0 3px darkgrey, 0 0 5px black;
+  text-transform: uppercase;
+  padding-top: 1%;
+}

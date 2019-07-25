@@ -1,0 +1,99 @@
+<div id="logged" [style.height.px]="windowHeight">
+  <div class="logOut">
+    <button type="button" class="btn btn-info btn-sm" (click)="logOut()" routerLink="/gamechosse">Wyloguj</button>
+    <app-chat></app-chat>
+    </div>
+    <div class="element">
+      <div>
+        Gracz: <span style="color:red;text-shadow: 0 0 3px darkgrey, 0 0 3px grey;text-transform:uppercase">{{userName}}</span>
+        </div>
+      <div>
+        {{userTeam}}: <img style = "height:20px;width:20px;" src={{userFlag}}>
+        </div>
+      <div>
+        Aktualny Przeciwnik: <span style="color:red">{{rivalName2}}</span>
+        </div>
+
+      </div>
+    <div class="element">
+      <div>
+        Wygrane: <span style="color:red;padding-right:2px">{{userWin}}</span>
+        <button type="button" class="btn btn-info btn-size" (click)="historyWin()">Historia</button>
+        </div>
+      <div>
+        Remisy: <span style="color:red;padding-right:2px">{{userDraw}}</span>
+        <button type="button" class="btn btn-info btn-size" (click)="historyDraw()">Historia</button>
+        </div>
+      <div>
+        Przegrane: <span style="color:red;padding-right:2px">{{userLoss}}</span>
+        <button type="button" class="btn btn-info btn-size" (click)="historyLoss()">Historia</button>
+        </div>
+      </div>
+      <div *ngIf = "guest == false; then guestFalse; else guestTrue"></div>
+      <ng-template #guestTrue>
+        <div *ngIf="isTurn[0] == true; then continueGame;else waitGame"></div>
+        <ng-template #continueGame>
+        <div class="element" style="padding-top:10%;">
+          <button type="button" class="btn btn-info" (click)="gameContinueGuest()">Wróc do meczu!</button>
+          </div>
+          </ng-template>
+          <ng-template #waitGame>
+            <div class="element" style="padding-top:10%;">
+              Czekaj aż swojąturę skończy przeciwnik!!
+              </div>
+            </ng-template>
+        </ng-template>
+      <ng-template #guestFalse>
+      <div *ngIf = "activeGame[0] == false; then startChoice"></div>
+      <div *ngIf="isTurn[0] == true ;then backToGame"></div>
+      <div *ngIf="isTurn[0] == false && activeGame[0] == true ;then waitingOponent"></div>
+      <ng-template #backToGame>
+        <div class="element" style="padding-top:20%;">
+          {{userTeam}}<img style = "height:20px;width:20px;" src={{userFlag}}> (<span style="color:red;padding-right:2px">{{userName}}</span>)  <span style="color:yellow;padding-right:2px"> vs </span> {{rivalTeam}}<img style = "height:20px;width:20px;" src={{rivalFlag}}> (<span style="color:red;padding-right:2px">{{rivalName}}</span>)
+          </div>
+          <div class="element" style="color:yellow;text-shadow: 0 0 3px darkgrey, 0 0 3px grey;text-transform:uppercase">
+            {{numberOfHalf}} połowa
+          </div>
+        <div class="element" style="padding-top:1%;">
+          {{resultUser}}:{{resultRival}}({{resultFirstHalfUser}}:{{resultFirstHalfRival}})
+          </div>
+          <div class="element" style="padding-top:10%;">
+            <button type="button" class="btn btn-info" (click)="gameContinue()">Wróc do meczu!</button>
+            </div>
+        </ng-template>
+      <ng-template #waitingOponent>
+        <div class="element" style="padding-top:20%;">
+          {{userTeam}}<img style = "height:20px;width:20px;" src={{userFlag}}> (<span style="color:red;padding-right:2px">{{userName}}</span>)  <span style="color:yellow;padding-right:2px"> vs </span> {{rivalTeam}}<img style = "height:20px;width:20px;" src={{rivalFlag}}> (<span style="color:red;padding-right:2px">{{rivalName}}</span>)
+          </div>
+          <div class="element" style="padding-top:1%;">
+            {{resultUser}}:{{resultRival}}({{resultFirstHalfUser}}:{{resultFirstHalfRival}})
+            </div>
+          <div class="element" style="padding-top:10%;">
+            Czekaj aż swojąturę skończy przeciwnik!!
+            </div>
+        </ng-template>
+        <ng-template #startChoice>
+          <div *ngIf="rivalName.length > 2 ;then startGame;else choicePlayer "></div>
+      <ng-template #choicePlayer>
+      <div class="element" style="padding-top:20%;">
+        <button type="button" class="btn btn-info" (click)="searchOpponent()">Szukaj przeciwnika</button>
+        </div>
+      <div class="element" style="padding-top:10%;font-size:22px; text-align:center;">
+        {{noOponent}}
+        </div>
+
+      </ng-template>
+      <ng-template #startGame>
+        <div class="element" style="padding-top:20%;">
+          {{userTeam}}<img style = "height:20px;width:20px;" src={{userFlag}}> (<span style="color:red;padding-right:2px">{{userName}}</span>)  <span style="color:yellow;padding-right:2px"> vs </span> {{rivalTeam}}<img style = "height:20px;width:20px;" src={{rivalFlag}}> (<span style="color:red;padding-right:2px">{{rivalName}}</span>)
+          </div>
+          <div class="element" style="padding-top:10%;">
+            <button type="button" class="btn btn-info" (click)="game()">Graj!</button>
+            </div>
+          <div class="element" style="padding-top:5%;font-size:42px;">
+            {{time}}
+            </div>
+          </ng-template>
+          </ng-template>
+          </ng-template>
+</div>

@@ -1,0 +1,32 @@
+<div id="logIn" [style.height.px]="windowHeight">
+  <div class="backButton">
+  <button type="button" class="btn btn-info" routerLink="/gamechosse">powrót</button>
+    </div>
+    <form [formGroup]="logInForm" (ngSubmit)="onSubmit()" style="padding-top:10%;">
+      <div class="element">
+        e-mail:
+      </div>
+      <label class="element">
+        <input type="email" formControlName="email">
+      </label>
+      <div class="element"><sup style="padding-top:2%;color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">
+        {{emailCorrect}}
+        </sup>
+        </div>
+      <div class="element">
+        hasło:
+      </div>
+      <label class="element">
+        <input type="password" formControlName="password">
+      </label>
+      <div class="element"><sup style="padding-top:2%;color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">
+        {{passwordCorrect}}
+        </sup>
+      </div>
+    <div class="element" style="padding-top:2%">
+      <button type="submit" [disabled]="!logInForm.valid" class="btn btn-danger">Zaloguj</button>
+    </div>
+
+  </form>
+
+</div>

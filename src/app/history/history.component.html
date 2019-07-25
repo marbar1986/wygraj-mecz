@@ -1,0 +1,11 @@
+<div id="history" [style.height.px]="windowHeight" (history)=historyWin($event)>
+  <div class="backButton">
+  <button type="button" class="btn btn-info" routerLink="/logged">powrót</button>
+    </div>
+    <div class="element" style="margin-bottom:5%;">
+      <span Style="color:blue;">{{headerHistory}}</span>
+      </div>
+      <div class="element" *ngFor = "let history of allHistory">
+         <p><span style="color:yellow;margin-right:5px;">vs</span><img style = "height:20px;width:20px;" src={{history.rivalFlag}}><span style="margin-left:5px;">{{history.rivalName}}</span> - {{history.result}} <span style="color:black;margin-left:5px;">({{history.resultHalf}})</span></p>
+        </div>
+  </div>

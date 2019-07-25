@@ -1,0 +1,50 @@
+<div id="game" [style.height.px]="windowHeight">
+  <div class="logOut">
+    <button type="button" class="btn btn-info btn-sm" (click)="logOut()" routerLink="/gamechosse">Wyloguj</button>
+    <div style="font-weight:bold;color:white;text-shadow: 0 0 3px darkgrey, 0 0 5px black;text-transform:uppercase">liczab akcji:<span style="color:red">{{RoundActionNumber[0]}}</span></div>
+    <app-chat></app-chat>
+    </div>
+    <div class="element">
+      {{userTeam}}<img style = "height:20px;width:20px;" src={{userFlag}}> (<span style="color:red;padding-right:2px">{{userName}}</span>)  <span style="color:yellow;padding-right:2px"> vs </span> {{rivalTeam}}<img style = "height:20px;width:20px;" src={{rivalFlag}}> (<span style="color:red;padding-right:2px">{{rivalName}}</span>)
+      </div>
+    <div class="element">
+      {{resultUser}}:{{resultRival}} ({{resultFirstHalfUser}}:{{resultFirstHalfRival}})
+      </div>
+
+    <div *ngIf = "RoundActionNumber[0] == undefinded; then draftAction; else startQuestions"></div>
+    <ng-template #draftAction>
+    <div class="element">
+      <button type="button" class="btn btn-info btn-sm" (click)="numberOfAction()">Wylosuj ilośc akcji</button>
+      </div>
+      </ng-template>
+    <ng-template #startQuestions>
+      <div *ngIf = "question.length > 2;then showQuestion; else showButtonQuestion"></div>
+      <ng-template #showButtonQuestion>
+        <div *ngIf = "endTourn == true; then showButtonQuestionOf; else showButtonQuestionOn"></div>
+        <ng-template #showButtonQuestionOn>
+    <div class="element">
+      <button type="button" class="btn btn-info btn-sm" (click)="questions()">Pytanie</button>
+      </div>
+      </ng-template>
+      <ng-template #showButtonQuestionOf>
+        <div class="element">
+        <button type="button" class="btn btn-info btn-sm" (click)="endOfTurn()">Zakończ Rundę</button>
+        </div>
+        </ng-template>
+      </ng-template>
+      <ng-template #showQuestion>
+        <div class="element"  style="padding-top:10%;font-size:18px;text-align:center">
+        {{question}}
+        </div>
+        <div class="element"  style="padding-top:3%;font-size:18px;text-align:center">
+        <app-timer (numberOfTimer) = "getNumberOfTimer($event)"></app-timer>
+        </div>
+        <div class="element"  style="font-size:18px;text-align:center;padding-top:5%">
+        <button type="button" class="btn btn-primary btn-sm" (click)="answer($event)">{{answer1}}</button>
+        <button type="button" class="btn btn-primary btn-sm" (click)="answer($event)">{{answer2}}</button>
+        <button type="button" class="btn btn-primary btn-sm" (click)="answer($event)">{{answer3}}</button>
+        <button type="button" class="btn btn-primary btn-sm" (click)="answer($event)">{{answer4}}</button>
+        </div>
+      </ng-template>
+      </ng-template>
+</div>

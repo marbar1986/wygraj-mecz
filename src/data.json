@@ -1,0 +1,1584 @@
+{
+  "players": [
+    {
+      "name": "polaczek",
+      "email": "polaczek@o2",
+      "password": "aaaaaaaa",
+      "team": "Polska",
+      "logged": false,
+      "win": 0,
+      "draw": 0,
+      "loss": 0,
+      "activeGame": false,
+      "questions": [],
+      "answers": [],
+      "firstHalf": [
+        null
+      ],
+      "quart": 1,
+      "scoredFirsthalf": 0,
+      "scoredSecondHalf": 0,
+      "half": 1,
+      "endMatch": false,
+      "guest": false,
+      "id": 1,
+      "winHistory": [],
+      "lossHistory": [],
+      "drawHistory": []
+    },
+    {
+      "name": "niemiec",
+      "email": "niemiec@o2",
+      "password": "aaaaaaaa",
+      "team": "Niemcy",
+      "logged": false,
+      "win": 0,
+      "draw": 0,
+      "loss": 0,
+      "activeGame": false,
+      "questions": [],
+      "answers": [],
+      "firstHalf": [
+        null
+      ],
+      "quart": 1,
+      "scoredFirsthalf": 0,
+      "scoredSecondHalf": 0,
+      "half": 1,
+      "endMatch": false,
+      "guest": false,
+      "id": 2,
+      "winHistory": [],
+      "lossHistory": [],
+      "drawHistory": []
+    },
+    {
+      "name": "francuz",
+      "email": "francuz@o2",
+      "password": "aaaaaaaa",
+      "team": "Francja",
+      "logged": true,
+      "win": 0,
+      "draw": 0,
+      "loss": 0,
+      "activeGame": false,
+      "questions": [],
+      "answers": [],
+      "firstHalf": [
+        null
+      ],
+      "quart": 1,
+      "scoredFirsthalf": 0,
+      "scoredSecondHalf": 0,
+      "half": 1,
+      "endMatch": false,
+      "guest": false,
+      "id": 3,
+      "winHistory": [],
+      "lossHistory": [],
+      "drawHistory": []
+    }
+  ],
+  "guest": [],
+  "questions": [
+    {
+      "id": 1,
+      "question": "W którym roku Arsenal F.C. zagrał w finale Ligi Mistrzów(stan na 2019r)?",
+      "answers": [
+        {
+          "a": 2004,
+          "b": 2005,
+          "c": 2006,
+          "d": 2007
+        }
+      ],
+      "correctAnswer": 2006
+    },
+    {
+      "id": 2,
+      "question": "Ile razy Arsenal F.C. zdobył tytuł Mistrza kraju(stan na 2019r)?",
+      "answers": [
+        {
+          "a": 10,
+          "b": 11,
+          "c": 12,
+          "d": 13
+        }
+      ],
+      "correctAnswer": 13
+    },
+    {
+      "id": 3,
+      "question": "Który z piłkarzy Arsenal  F.C. zdobył najwięcej razy koronę króla  strzelców w lidze Angielskiej(stan na 2019r)?",
+      "answers": [
+        {
+          "a": "Robin van Persie",
+          "b": "Thierry Henry",
+          "c": "Alan Smith",
+          "d": "Ian Wright"
+        }
+      ],
+      "correctAnswer": "Thierry Henry"
+    },
+    {
+      "id": 4,
+      "question": "Która z Angielskich drużyn zdobyła najwięcej Pucharów Anglii (stan na 2019r)?",
+      "answers": [
+        {
+          "a": "Manchester United",
+          "b": "Liverpool F.C.",
+          "c": "Arsenal F.C.",
+          "d": "Chelsea F.C."
+        }
+      ],
+      "correctAnswer": "Arsenal F.C."
+    },
+    {
+      "id": 5,
+      "question": "Ile razy Arsenal F.C. zdobył Puchar Anglii (stan na 2018r)?",
+      "answers": [
+        {
+          "a": 10,
+          "b": 11,
+          "c": 12,
+          "d": 13
+        }
+      ],
+      "correctAnswer": 13
+    },
+    {
+      "id": 6,
+      "question": "Kto został nastepcą Alexa Fergusona na stanowisku Menedżera Manchasteru United?",
+      "answers": [
+        {
+          "a": "David Moyes",
+          "b": "Louis van Gaal",
+          "c": "Ryan Giggs",
+          "d": "Jose Mourinho"
+        }
+      ],
+      "correctAnswer": "David Moyes"
+    },
+    {
+      "id": 7,
+      "question": "Ile razy manchester United zdobył tytuł mistrza kraju (stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 18,
+          "b": 19,
+          "c": 20,
+          "d": 21
+        }
+      ],
+      "correctAnswer": 20
+    },
+    {
+      "id": 8,
+      "question": "Która z Angielskich drużyn zdobyła najwięcej tytułów mistza kraju (stan na 2018rok)?",
+      "answers": [
+        {
+          "a": "Manchester United",
+          "b": "Liverpool F.C.",
+          "c": "Arsenal F.C.",
+          "d": "Chelsea F.C."
+        }
+      ],
+      "correctAnswer": "Manchester United"
+    },
+    {
+      "id": 9,
+      "question": "Ile razy Manchester United zdobył puchar Anglii (stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 10,
+          "b": 11,
+          "c": 12,
+          "d": 13
+        }
+      ],
+      "correctAnswer": 12
+    },
+    {
+      "id": 10,
+      "question": "W którym roku Manchester United wygrał klubowe Mistrzostwa Świata(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 2005,
+          "b": 2006,
+          "c": 2007,
+          "d": 2008
+        }
+      ],
+      "correctAnswer": 2008
+    },
+    {
+      "id": 11,
+      "question": "Ile razy Manchester United wygrał klubowe Mistrzostwa Świata(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 1,
+          "b": 2,
+          "c": 3,
+          "d": 4
+        }
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "question": "Ile razy Manchester United wygrał Ligę Mistrzów(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 1,
+          "b": 2,
+          "c": 3,
+          "d": 4
+        }
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 13,
+      "question": "Ile razy Manchester United przegrał w finale Ligi Mistrzów(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 1,
+          "b": 2,
+          "c": 3,
+          "d": 4
+        }
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 14,
+      "question": "W którym roku Manchester United wygrał Ligę Europy(Puchar UEFA}(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 2015,
+          "b": 2016,
+          "c": 2017,
+          "d": 2018
+        }
+      ],
+      "correctAnswer": 2017
+    },
+    {
+      "id": 15,
+      "question": "Ile razy Manchester United zdobył Superpuchar Kraju(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 18,
+          "b": 19,
+          "c": 20,
+          "d": 21
+        }
+      ],
+      "correctAnswer": 21
+    },
+    {
+      "id": 16,
+      "question": "Która z Angielskich drużyn zdobyła najwięcej razy Superpuchar Kraju(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": "Manchester United",
+          "b": "Liverpool F.C.",
+          "c": "Arsenal F.C.",
+          "d": "Chelsea F.C."
+        }
+      ],
+      "correctAnswer": "Manchester United"
+    },
+    {
+      "id": 17,
+      "question": "Kto był pierwszym trenerem spoza Anglii Manchasteru United?",
+      "answers": [
+        {
+          "a": "John Chapman",
+          "b": "Scott Duncan",
+          "c": "Matt Busby",
+          "d": "Tommy Docherty"
+        }
+      ],
+      "correctAnswer": "John Chapman"
+    },
+    {
+      "id": 18,
+      "question": "Ile razy Chelsea F.C. wygrała Ligę Mistrzów(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 1,
+          "b": 2,
+          "c": 3,
+          "d": 0
+        }
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 19,
+      "question": "W którym roku Chelsea F.C. wygrała Ligę Mistrzów(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 2011,
+          "b": 2012,
+          "c": 2013,
+          "d": 2014
+        }
+      ],
+      "correctAnswer": 2012
+    },
+    {
+      "id": 20,
+      "question": "Ile razy Chelsea F.C. zagrała w finale Ligi Mistrzów(stan na 2018rok)?",
+      "answers": [
+        {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3
+        }
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 21,
+      "question": "Ile razy Chelsea F.C. wygrała Ligę Europy(puchar UEFA)(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3
+        }
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 22,
+      "question": "Ile razy Chelsea F.C. zdobyła tytuł Mistrza Anglii(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 6,
+          "b": 7,
+          "c": 8,
+          "d": 9
+        }
+      ],
+      "correctAnswer": 6
+    },
+    {
+      "id": 23,
+      "question": "Ile razy Chelsea F.C. wygrała Puchar Anglii(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 6,
+          "b": 7,
+          "c": 8,
+          "d": 9
+        }
+      ],
+      "correctAnswer": 8
+    },
+    {
+      "id": 24,
+      "question": "Ile razy Chelsea F.C. wygrała Superpuchar Anglii(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 5,
+          "b": 6,
+          "c": 7,
+          "d": 4
+        }
+      ],
+      "correctAnswer": 4
+    },
+    {
+      "id": 25,
+      "question": "kto był najlepszym strzelcem w historii Chelsea F.C. (stan na 2019rok)?",
+      "answers": [
+        {
+          "a": "Didier Drogba",
+          "b": "Kerry Dixon",
+          "c": "Gianfranco Zola",
+          "d": "Frank Lampard"
+        }
+      ],
+      "correctAnswer": "Frank Lampard"
+    },
+    {
+      "id": 26,
+      "question": "Który zawodnik wystapił najwięcej razy w barwach Chelsea F.C. (stan na 2019rok)?",
+      "answers": [
+        {
+          "a": "Frank Lampard",
+          "b": "John Terry",
+          "c": "Peter Bonetti",
+          "d": "Ron Harris"
+        }
+      ],
+      "correctAnswer": "Ron Harris"
+    },
+    {
+      "id": 27,
+      "question": "Kto był pierwszym Menadżerem spoza Wielkiej Brytani Chelsea F.C.?",
+      "answers": [
+        {
+          "a": "Ruud Gullit",
+          "b": "Gianluca Vialli",
+          "c": "Jose Mourinho",
+          "d": "Claudio Ranieri"
+        }
+      ],
+      "correctAnswer": "Ruud Gullit"
+    },
+    {
+      "id": 28,
+      "question": "Kto był pierwszym Menadżerem spoza Wielkiej Brytani Liverpool F.C.?",
+      "answers": [
+        {
+          "a": "Gerard Houllier",
+          "b": "Rafael Benitez",
+          "c": "Brendan Rogers",
+          "d": "Don Welsh"
+        }
+      ],
+      "correctAnswer": "Gerard Houllier"
+    },
+    {
+      "id": 29,
+      "question": "Ile razy Liverpool F.C. wygrał Ligę Mistrzów (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 3,
+          "b": 4,
+          "c": 5,
+          "d": 6
+        }
+      ],
+      "correctAnswer": 6
+    },
+    {
+      "id": 30,
+      "question": "Ile razy Liverpool F.C. wystapił w finale Ligi Mistrzów (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 6,
+          "b": 7,
+          "c": 8,
+          "d": 9
+        }
+      ],
+      "correctAnswer": 9
+    },
+    {
+      "id": 31,
+      "question": "Ile razy Liverpool F.C. wygrał Ligę Europy(Puchar UEFA) (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 1,
+          "b": 2,
+          "c": 3,
+          "d": 4
+        }
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 32,
+      "question": "Ile razy Liverpool F.C. zagrał w finale Ligi Europy(Puchar UEFA) (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 1,
+          "b": 2,
+          "c": 3,
+          "d": 4
+        }
+      ],
+      "correctAnswer": 4
+    },
+    {
+      "id": 33,
+      "question": "Który z zawodników wystapił najwięcej razy w barwach Liverpool F.C.(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Ian Callaghan",
+          "b": "Jamie Carragher",
+          "c": "Steven Gerrard",
+          "d": "Tommy Smith"
+        }
+      ],
+      "correctAnswer": "Ian Callaghan"
+    },
+    {
+      "id": 34,
+      "question": "Który z zawodników zdobył najwięcej goli w barwach Liverpool F.C.(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Michael Owen",
+          "b": "Ian Rush",
+          "c": "Steven Gerrard",
+          "d": "Roger Hunt"
+        }
+      ],
+      "correctAnswer": "Ian Rush"
+    },
+    {
+      "id": 35,
+      "question": "Ile razy Liverpool F.C. zdobył tytuł Mistrza Kraju(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 17,
+          "b": 18,
+          "c": 19,
+          "d": 20
+        }
+      ],
+      "correctAnswer": 18
+    },
+    {
+      "id": 36,
+      "question": "Ile razy Liverpool F.C. wygrał Puchar Anglii(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 4,
+          "b": 5,
+          "c": 6,
+          "d": 7
+        }
+      ],
+      "correctAnswer": 7
+    },
+    {
+      "id": 37,
+      "question": "Ile razy Liverpool F.C. wygrał Superpuchar Anglii(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 13,
+          "b": 14,
+          "c": 15,
+          "d": 16
+        }
+      ],
+      "correctAnswer": 15
+    },
+    {
+      "id": 38,
+      "question": "Ile razy Manchester City wygrał Puchar Anglii(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 4,
+          "b": 5,
+          "c": 6,
+          "d": 7
+        }
+      ],
+      "correctAnswer": 6
+    },
+    {
+      "id": 39,
+      "question": "Ile razy Manchester City wygrał Superpuchar Anglii(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 4,
+          "b": 5,
+          "c": 6,
+          "d": 7
+        }
+      ],
+      "correctAnswer": 5
+    },
+    {
+      "id": 40,
+      "question": "Który zawodnik wystapił najwięcej razy w barwach Manchesteru City(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Alan Oakes",
+          "b": "Joe Corrigan",
+          "c": "Mike Doyle",
+          "d": "Eric Brook"
+        }
+      ],
+      "correctAnswer": "Alan Oakes"
+    },
+    {
+      "id": 41,
+      "question": "Który zawodnik zdobył najwięcej goli w barwach Manchesteru City(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Sergio Aguero",
+          "b": "Colin Bell",
+          "c": "Tommy Jonhson",
+          "d": "Eric Brook"
+        }
+      ],
+      "correctAnswer": "Sergio Aguero"
+    },
+    {
+      "id": 42,
+      "question": "W którym roku Bayern Monachium wygrał Klubowe Mistrzostwa Świata(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 2010,
+          "b": 2011,
+          "c": 2012,
+          "d": 2013
+        }
+      ],
+      "correctAnswer": 2013
+    },
+    {
+      "id": 43,
+      "question": "Ile razy Bayern Monachium wygrał Ligę Mistrzów(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 4,
+          "b": 5,
+          "c": 6,
+          "d": 3
+        }
+      ],
+      "correctAnswer": 5
+    },
+    {
+      "id": 44,
+      "question": "W którym roku Bayern Monachium wygrał Ligę Europy(Puchar UEFA)(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 1993,
+          "b": 1994,
+          "c": 1995,
+          "d": 1996
+        }
+      ],
+      "correctAnswer": 1996
+    },
+    {
+      "id": 45,
+      "question": "Ile razy Bayern Monachium zdobył tytuł mistrza kraju(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 28,
+          "b": 29,
+          "c": 30,
+          "d": 31
+        }
+      ],
+      "correctAnswer": 29
+    },
+    {
+      "id": 46,
+      "question": "Która drużyna zdobyła najwięcej razy tytuł mistrza Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Borussia Dortmund",
+          "b": "Bayern Monachium",
+          "c": "Hertha Berlin",
+          "d": "Bayer Leverkusen"
+        }
+      ],
+      "correctAnswer": "Bayern Monachium"
+    },
+    {
+      "id": 47,
+      "question": "Która drużyna zdobyła najwięcej razy Puchar Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Borussia Dortmund",
+          "b": "Bayern Monachium",
+          "c": "Hertha Berlin",
+          "d": "Bayer Leverkusen"
+        }
+      ],
+      "correctAnswer": "Bayern Monachium"
+    },
+    {
+      "id": 48,
+      "question": "Która drużyna zdobyła najwięcej razy Superpuchar Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Borussia Dortmund",
+          "b": "Bayern Monachium",
+          "c": "Hertha Berlin",
+          "d": "Bayer Leverkusen"
+        }
+      ],
+      "correctAnswer": "Bayern Monachium"
+    },
+    {
+      "id": 49,
+      "question": "Ile razy Bayern Monachium wygrał Puchar Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 18,
+          "b": 19,
+          "c": 20,
+          "d": 17
+        }
+      ],
+      "correctAnswer": 19
+    },
+    {
+      "id": 50,
+      "question": "Ile razy Bayern Monachium wygrał Superpuchar Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 4,
+          "b": 5,
+          "c": 6,
+          "d": 7
+        }
+      ],
+      "correctAnswer": 7
+    },
+    {
+      "id": 51,
+      "question": "Który trener zdobył najwięcej trofeów z Bayernem Monachium(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Ottmar Hitzfeld",
+          "b": "Josep Guardiola",
+          "c": "Felix Maghat",
+          "d": "Jupp Heynckes"
+        }
+      ],
+      "correctAnswer": "Ottmar Hitzfeld"
+    },
+    {
+      "id": 52,
+      "question": "Który trener zdobył najwięcej trofeów z Bayernem Monachium(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Ottmar Hitzfeld",
+          "b": "Josep Guardiola",
+          "c": "Felix Maghat",
+          "d": "Jupp Heynckes"
+        }
+      ],
+      "correctAnswer": "Ottmar Hitzfeld"
+    },
+    {
+      "id": 53,
+      "question": "W którym roku Borussia Dortmund wygrała Ligę Mistrzów(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 1996,
+          "b": 1997,
+          "c": 1998,
+          "d": 1999
+        }
+      ],
+      "correctAnswer": 1997
+    },
+    {
+      "id": 54,
+      "question": "Ile razy Borussia Dortmund wygrała Ligę Europy(Puchar UEFA)(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3
+        }
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 55,
+      "question": "Ile razy Borussia Dortmund zdobyła tytuł Mistrza Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 5,
+          "b": 6,
+          "c": 7,
+          "d": 8
+        }
+      ],
+      "correctAnswer": 8
+    },
+    {
+      "id": 56,
+      "question": "Ile razy Borussia Dortmund wygrała Puchar Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 3,
+          "b": 4,
+          "c": 5,
+          "d": 6
+        }
+      ],
+      "correctAnswer": 4
+    },
+    {
+      "id": 57,
+      "question": "Ile razy Borussia Dortmund wygrała Superpuchar Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 3,
+          "b": 4,
+          "c": 5,
+          "d": 6
+        }
+      ],
+      "correctAnswer": 5
+    },
+    {
+      "id": 58,
+      "question": "Jaki piłkarz rozegrał najwięcej meczy w barwach Borussii Dortmund (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Stefan Reuter",
+          "b": "Lars Ricken",
+          "c": "Lothar Huber",
+          "d": "Michael Zorc"
+        }
+      ],
+      "correctAnswer": "Michael Zorc"
+    },
+    {
+      "id": 59,
+      "question": "W którym roku Bayer 04 Leverkusen wygrał Ligę Europy(Puchar UEFA)(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 1987,
+          "b": 1988,
+          "c": 1989,
+          "d": 1990
+        }
+      ],
+      "correctAnswer": 1988
+    },
+    {
+      "id": 60,
+      "question": "W którym roku Bayer 04 Leverkusen zagrał w finale Ligi Mistrzów(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 2001,
+          "b": 2002,
+          "c": 2003,
+          "d": 2004
+        }
+      ],
+      "correctAnswer": 2002
+    },
+    {
+      "id": 61,
+      "question": "Ile razy Bayer 04 Leverkusen sięgnął po tytuł Mistrza Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3
+        }
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 62,
+      "question": "Ile razy Bayer 04 Leverkusen wygrał Puchar Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3
+        }
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 63,
+      "question": "Jaki piłkarz rozegrał najwięcej meczy w barwach Bayeru 04 Leverkusen(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Ulf Kirsten",
+          "b": "Carsten Ramelow",
+          "c": "Rüdiger Vollborn",
+          "d": "Stefan Kießling"
+        }
+      ],
+      "correctAnswer": "Rüdiger Vollborn"
+    },
+    {
+      "id": 64,
+      "question": "Jaki piłkarz zdobył najwięcej goli w barwach Bayeru 04 Leverkusen(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Ulf Kirsten",
+          "b": "Dimityr Berbatow",
+          "c": "Herbert Waas",
+          "d": "Stefan Kießling"
+        }
+      ],
+      "correctAnswer": "Ulf Kirsten"
+    },
+    {
+      "id": 65,
+      "question": "W którym roku FC Schalke 04 wygrło Ligę Europy(Puchar UEFA)(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 1995,
+          "b": 1996,
+          "c": 1997,
+          "d": 1998
+        }
+      ],
+      "correctAnswer": 1997
+    },
+    {
+      "id": 66,
+      "question": "Ile razy FC Schalke 04 zdobyło Mistrzostwo Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 6,
+          "b": 7,
+          "c": 8,
+          "d": 9
+        }
+      ],
+      "correctAnswer": 7
+    },
+    {
+      "id": 67,
+      "question": "Ile razy FC Schalke 04 wygrało Puchar Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 5,
+          "b": 6,
+          "c": 7,
+          "d": 8
+        }
+      ],
+      "correctAnswer": 5
+    },
+    {
+      "id": 68,
+      "question": "Ile razy FC Schalke 04 wygrało Superpuchar Niemiec(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3
+        }
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 69,
+      "question": "Jakim najwyższym wynikiem FC Schalke 04 przegrało mecz na własnym boisku(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "0:5",
+          "b": "0:6",
+          "c": "0:7",
+          "d": "0:8"
+        }
+      ],
+      "correctAnswer": "0:6"
+    },
+    {
+      "id": 70,
+      "question": "FC Schalke 04 zanotowało najwyższą wygraną w lidze na wyjeździe 0:7 z kim?(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Bayernem Monachium",
+          "b": "Borussią Dortmund",
+          "c": "Bayerem 04 Leverkusen",
+          "d": "Herthą Berlin"
+        }
+      ],
+      "correctAnswer": "Bayernem Monachium"
+    },
+    {
+      "id": 71,
+      "question": " Jak nazywał się pierwszy zagraniczny trener FC Schalke 04 ?(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Ivica Horvat",
+          "b": "Slobodan Cendic",
+          "c": "Maximilian Merkel",
+          "d": "Fahrudin Jusufi"
+        }
+      ],
+      "correctAnswer": "Slobodan Cendic"
+    },
+    {
+      "id": 72,
+      "question": " Jaki piłkarz rozegrał najwięcej meczy w barwach FC Schalke 04 (Bundesliga)(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Norbert Nigbur",
+          "b": "Klaus Fischer",
+          "c": "Rolf Russmann",
+          "d": "Klaus Fichtel"
+        }
+      ],
+      "correctAnswer": "Klaus Fichtel"
+    },
+    {
+      "id": 73,
+      "question": " Jaki piłkarz zdobył najwięcej goli w barwach FC Schalke 04(Bundesliga)(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Ebbe Sand",
+          "b": "Klaus Fischer",
+          "c": "Klaas-Jan Huntelaar",
+          "d": "Kevin Kurányi"
+        }
+      ],
+      "correctAnswer": "Klaus Fischer"
+    },
+    {
+      "id": 74,
+      "question": "W którym roku został założony klub A.C. Milan?",
+      "answers": [
+        {
+          "a": 1899,
+          "b": 1900,
+          "c": 1901,
+          "d": 1902
+        }
+      ],
+      "correctAnswer": 1899
+    },
+    {
+      "id": 75,
+      "question": "W którym roku A.C. Milan wygrał Klubowe Mistrzostwa Świata(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 2005,
+          "b": 2006,
+          "c": 2007,
+          "d": 2008
+        }
+      ],
+      "correctAnswer": 2007
+    },
+    {
+      "id": 76,
+      "question": "Ile razy A.C. Milan wygrał Ligę Mistrzów(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 5,
+          "b": 6,
+          "c": 7,
+          "d": 8
+        }
+      ],
+      "correctAnswer": 7
+    },
+    {
+      "id": 77,
+      "question": "Ile razy A.C. Milan zagrał w finale Ligi Mistrzów(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 9,
+          "b": 10,
+          "c": 11,
+          "d": 12
+        }
+      ],
+      "correctAnswer": 11
+    },
+    {
+      "id": 78,
+      "question": "Ile razy A.C. Milan wygrał Ligę Europy(Puchar UEFA)(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 0,
+          "b": 1,
+          "c": 2,
+          "d": 3
+        }
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 79,
+      "question": "Ile razy A.C. Milan zdobył tytuł Mistrza Włoch(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 18,
+          "b": 19,
+          "c": 20,
+          "d": 21
+        }
+      ],
+      "correctAnswer": 18
+    },
+    {
+      "id": 80,
+      "question": "Ile razy A.C. Milan wygrał Puchar Włoch(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 4,
+          "b": 5,
+          "c": 6,
+          "d": 7
+        }
+      ],
+      "correctAnswer": 5
+    },
+    {
+      "id": 81,
+      "question": "Ile razy A.C. Milan wygrał Superpuchar Włoch(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 4,
+          "b": 5,
+          "c": 6,
+          "d": 7
+        }
+      ],
+      "correctAnswer": 7
+    },
+    {
+      "id": 82,
+      "question": "Ilu trenerów A.C. Milan miał w swojej Historii(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 78,
+          "b": 79,
+          "c": 80,
+          "d": 81
+        }
+      ],
+      "correctAnswer": 80
+    },
+    {
+      "id": 83,
+      "question": "Jaki zawodnik rozegrał najwięcej meczy w barwach A.C. Milan(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": "Paolo Maldini",
+          "b": "Franco Baresi",
+          "c": "Alessandro Costacurta",
+          "d": "Gianni Rivera"
+        }
+      ],
+      "correctAnswer": "Paolo Maldini"
+    },
+    {
+      "id": 84,
+      "question": "Jaki zawodnik zdobył najwięcej goli w barwach A.C. Milan(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": "Gunnar Nordahl",
+          "b": "Andrij Szewczenko",
+          "c": "José Altafini",
+          "d": "Gianni Rivera"
+        }
+      ],
+      "correctAnswer": "Gunnar Nordahl"
+    },
+    {
+      "id": 85,
+      "question": "Gunnar Nordahl zdobył najwięcej goli w barwach A.C. Milan ile(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 219,
+          "b": 220,
+          "c": 221,
+          "d": 222
+        }
+      ],
+      "correctAnswer": 221
+    },
+    {
+      "id": 86,
+      "question": "Paolo Maldini rozegrał najwięcej spotkań w barwach A.C. Milan ile(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": 900,
+          "b": 901,
+          "c": 902,
+          "d": 903
+        }
+      ],
+      "correctAnswer": 902
+    },
+    {
+      "id": 87,
+      "question": "Kto jest głównym sponsorem A.C. Milan(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": "Emirates",
+          "b": "bwin.com",
+          "c": "Opel",
+          "d": "Motta"
+        }
+      ],
+      "correctAnswer": "Emirates"
+    },
+    {
+      "id": 88,
+      "question": "Kto jest sponsorem technicznym A.C. Milan(stan na 2019rok)?",
+      "answers": [
+        {
+          "a": "Adidas",
+          "b": "Nike",
+          "c": "Puma",
+          "d": "Kappa"
+        }
+      ],
+      "correctAnswer": "Puma"
+    },
+    {
+      "id": 89,
+      "question": "Od 16 lutego 2006 Milan ma swoją oficjalną maskotkę o imieniu Milanello, kto ją zaprojektował?",
+      "answers": [
+        {
+          "a": "Warner Bros",
+          "b": "Walt Disney",
+          "c": "Nina Ricci",
+          "d": "Roberto Cavalli"
+        }
+      ],
+      "correctAnswer": "Warner Bros"
+    },
+    {
+      "id": 90,
+      "question": "Ile razy Juventus F.C. wygrał Ligę Mistrzów (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 2,
+          "b": 3,
+          "c": 4,
+          "d": 5
+        }
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 91,
+      "question": "Ile razy Juventus F.C. wygrał Ligę Mistrzów (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 2,
+          "b": 3,
+          "c": 4,
+          "d": 5
+        }
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 92,
+      "question": "Ile razy Juventus F.C. wygrał Ligę Europy(Puchar UEFA) (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 2,
+          "b": 3,
+          "c": 4,
+          "d": 5
+        }
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 93,
+      "question": "Ile razy Juventus F.C. zdobył tytuł Mistrza Włoch (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 32,
+          "b": 33,
+          "c": 34,
+          "d": 35
+        }
+      ],
+      "correctAnswer": 35
+    },
+    {
+      "id": 94,
+      "question": "Ile razy Juventus F.C. wygrał Puchar Włoch (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 10,
+          "b": 11,
+          "c": 12,
+          "d": 13
+        }
+      ],
+      "correctAnswer": 13
+    },
+    {
+      "id": 95,
+      "question": "Ile razy Juventus F.C. wygrał Superpuchar Włoch (stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 5,
+          "b": 6,
+          "c": 7,
+          "d": 8
+        }
+      ],
+      "correctAnswer": 8
+    },
+    {
+      "id": 96,
+      "question": "Ile najwięcej punktów w Serie A zdobył w jednym sezonie Juventus F.C.(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 100,
+          "b": 101,
+          "c": 102,
+          "d": 103
+        }
+      ],
+      "correctAnswer": 102
+    },
+    {
+      "id": 97,
+      "question": "Najwyższe zwycięstwo na własnym stadionie Juventus F.C. to 9:1 z kim(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "A.C Milanem",
+          "b": "Interem Mediolan",
+          "c": "A.C Fiorentiną",
+          "d": "A.C Parmą"
+        }
+      ],
+      "correctAnswer": "Interem Mediolan"
+    },
+    {
+      "id": 97,
+      "question": "Najwyższe zwycięstwo w pucharach Juventus F.C. to 7:1 z jaką polską drużyną(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Lechią Gdańsk",
+          "b": "Legią Warszawa",
+          "c": "Wisłą Kraków",
+          "d": "Górnikiem Zabrze"
+        }
+      ],
+      "correctAnswer": "Lechią Gdańsk"
+    },
+    {
+      "id": 98,
+      "question": "Najwyższa porażka u siebie Juventusu F.C. to 1:7 z kim(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "A.C Milanem",
+          "b": "Interem Mediolan",
+          "c": "A.C Fiorentiną",
+          "d": "A.C Parmą"
+        }
+      ],
+      "correctAnswer": "A.C Milanem"
+    },
+    {
+      "id": 99,
+      "question": "Który sezon w lidze Juventusu F.C. zakończył bez porażki(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "2010/11",
+          "b": "2011/12",
+          "c": "2012/13",
+          "d": "2013/14"
+        }
+      ],
+      "correctAnswer": "2011/12"
+    },
+    {
+      "id": 100,
+      "question": "Jaki piłkarz rozegrał najwięcej spotkań w barwach Juventus F.C.(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Alessandro Del Piero",
+          "b": "Gianluigi Buffon",
+          "c": "Gaetano Scirea",
+          "d": "Dino Zoff"
+        }
+      ],
+      "correctAnswer": "Alessandro Del Piero"
+    },
+    {
+      "id": 101,
+      "question": "Jaki piłkarz zdobył najwięcej goli w barwach Juventus F.C.(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Alessandro Del Piero",
+          "b": "David Trezeguet",
+          "c": "Roberto Baggio",
+          "d": "Giampiero Boniperti"
+        }
+      ],
+      "correctAnswer": "Alessandro Del Piero"
+    },
+    {
+      "id": 102,
+      "question": "Alessandro Del Piero zdobył najwięcej goli w barwach Juventus F.C. ile(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 287,
+          "b": 288,
+          "c": 289,
+          "d": 290
+        }
+      ],
+      "correctAnswer": 289
+    },
+    {
+      "id": 103,
+      "question": "Ilu trenerów w swojej historii miał Juventus F.C.(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": 47,
+          "b": 48,
+          "c": 49,
+          "d": 50
+        }
+      ],
+      "correctAnswer": 48
+    },
+    {
+      "id": 104,
+      "question": "Kto jest sponsorem technicznym Juventus F.C.(stan na 2019 rok)?",
+      "answers": [
+        {
+          "a": "Adidas",
+          "b": "Nike",
+          "c": "Puma",
+          "d": "Kappa"
+        }
+      ],
+      "correctAnswer": "Adidas"
+    }
+  ],
+  "historyWin": [],
+  "historyDraw": [],
+  "historyLoss": [],
+  "chat": [
+    {
+      "name": "polaczek",
+      "email": "polaczek@o2",
+      "message": [
+        {
+          "id": 2,
+          "name": "niemiec",
+          "text": "sdas as ",
+          "data": "2019-07-25T00:35:05.482Z",
+          "read": true
+        }
+      ],
+      "contacts": [
+        "niemiec",
+        "francuz"
+      ],
+      "newContact": [],
+      "id": 1
+    },
+    {
+      "name": "niemiec",
+      "email": "niemiec@o2",
+      "message": [
+        {
+          "id": 1,
+          "name": "polaczek",
+          "text": "asdasd asd ",
+          "data": "2019-07-25T00:13:08.907Z",
+          "read": true
+        },
+        {
+          "id": 3,
+          "name": "francuz",
+          "text": "asd asd as",
+          "data": "2019-07-25T00:14:17.813Z",
+          "read": true
+        },
+        {
+          "id": 3,
+          "name": "francuz",
+          "text": "dasd dasd ",
+          "data": "2019-07-25T11:25:41.772Z",
+          "read": true
+        },
+        {
+          "id": 3,
+          "name": "francuz",
+          "text": "da sdas ",
+          "data": "2019-07-25T11:25:41.772Z",
+          "read": true
+        },
+        {
+          "id": 1,
+          "name": "polaczek",
+          "text": "dasd asd",
+          "data": "2019-07-25T11:40:25.710Z",
+          "read": true
+        },
+        {
+          "id": 3,
+          "name": "francuz",
+          "text": "xdsf df ",
+          "data": "2019-07-25T12:44:32.325Z",
+          "read": true
+        },
+        {
+          "id": 3,
+          "name": "francuz",
+          "text": "dsf sdf ",
+          "data": "2019-07-25T12:44:32.325Z",
+          "read": true
+        },
+        {
+          "id": 3,
+          "name": "francuz",
+          "text": "fdsfsdf sdf ",
+          "data": "2019-07-25T12:44:32.325Z",
+          "read": true
+        }
+      ],
+      "contacts": [
+        "polaczek",
+        "francuz"
+      ],
+      "newContact": [],
+      "id": 2
+    },
+    {
+      "name": "francuz",
+      "email": "francuz@o2",
+      "message": [
+        {
+          "id": 2,
+          "name": "niemiec",
+          "text": "dasd asd ",
+          "data": "2019-07-25T00:42:15.666Z",
+          "read": true
+        },
+        {
+          "id": 1,
+          "name": "polaczek",
+          "text": "a asjdajshduas ",
+          "data": "2019-07-25T11:41:43.018Z",
+          "read": false
+        },
+        {
+          "id": 2,
+          "name": "niemiec",
+          "text": "asd sad ",
+          "data": "2019-07-25T12:45:01.483Z",
+          "read": true
+        },
+        {
+          "id": 2,
+          "name": "niemiec",
+          "text": "asd asd ",
+          "data": "2019-07-25T12:45:01.483Z",
+          "read": true
+        }
+      ],
+      "contacts": [
+        "niemiec"
+      ],
+      "newContact": [],
+      "id": 3
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

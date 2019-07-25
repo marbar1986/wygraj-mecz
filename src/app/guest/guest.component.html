@@ -1,0 +1,68 @@
+<div id="guest" [style.height.px]="windowHeight">
+  <div class="backButton">
+  <button type="button" class="btn btn-info" routerLink="/gamechosse">powrót</button>
+    </div>
+    <div *ngIf="isActive == false ;then firstStart; else continueGame "></div>
+    <ng-template #continueGame>
+      <div *ngIf="turn == true ;then backToGame; else waitingOpponent "></div>
+      <ng-template #backToGame>
+        <div class="element">
+          <button type="button" class="btn btn-info" routerLink="/gameGuest">powrót do gry</button>
+          </div>
+        </ng-template>
+      <ng-template #waitingOpponent>
+        <div class="element">
+          Poczekaj, aż swoją turę skończy przeciwnik!
+          </div>
+        </ng-template>
+      </ng-template>
+    <ng-template #firstStart>
+    <div *ngIf="guest == undefined || guest.length == 0 ;then choiceGuest; else choiceRival "></div>
+    <ng-template #choiceGuest>
+    <form [formGroup]="guestForm" (ngSubmit)="onSubmit()">
+
+    <div class="element">
+      Drużyna:
+    </div>
+    <label class="element">
+      <select formControlName="team">
+      <option *ngFor="let team of teams" [value]="team">{{team}}</option>
+    </select>
+    </label>
+    <div class="element">
+      <div *ngIf="guestForm.get('team').invalid"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Pole Wymagane!</sup></div>
+    </div>
+
+    <div class="element" style="padding-top:2%">
+      <button type="submit" [disabled]="!guestForm.valid" class="btn btn-danger">Graj</button>
+    </div>
+    <div class="element">
+      <span style="font-size:20px;color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">{{warning}}</span>
+    </div>
+  </form>
+  </ng-template>
+  <ng-template #choiceRival>
+    <div *ngIf="rivalName.length > 2 ;then startGame; else choiceRivalContinue "></div>
+    <ng-template #choiceRivalContinue>
+    <div class="element" style="padding-top:20%;">
+      <button type="button" class="btn btn-info" (click)="searchOpponent()">Szukaj przeciwnika</button>
+      </div>
+    <div class="element" style="padding-top:10%;font-size:22px; text-align:center;">
+      {{noOponent}}
+      </div>
+      </ng-template>
+      <ng-template #startGame>
+
+        <div class="element" style="padding-top:20%;">
+          {{userTeam}}<img style = "height:20px;width:20px;" src={{userFlag}}> (<span style="color:red;padding-right:2px">{{userName}}</span>)  <span style="color:yellow;padding-right:2px"> vs </span> {{rivalTeam}}<img style = "height:20px;width:20px;" src={{rivalFlag}}> (<span style="color:red;padding-right:2px">{{rivalName}}</span>)
+          </div>
+          <div class="element" style="padding-top:10%;">
+            <button type="button" class="btn btn-info" (click)="game()">Graj!</button>
+            </div>
+          <div class="element" style="padding-top:5%;font-size:42px;">
+            {{time}}
+            </div>
+        </ng-template>
+    </ng-template>
+    </ng-template>
+</div>
