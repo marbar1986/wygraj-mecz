@@ -3,7 +3,9 @@ import { Location } from '@angular/common';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpService } from '../services/http.service';
 import { Router } from '@angular/router';
-
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { AddContactComponent } from '../add-contact';
+import { DeleteContactComponent } from '../delete-contact';
 @Component({
   selector: 'app-chat-active',
   templateUrl: './chat-active.component.html',
@@ -19,14 +21,19 @@ export class ChatActiveComponent implements OnInit {
   myContacts = [];
   addressed = "";
   historyChat = [];
-  allMessageUsers: any;
+  allMessageUsers=[];
   MessageUsersName: any;
   MessageContact = [];
   UserContactMessages = [];
   newContact = [];
+  newContactMessages=[];
+  newContactMessagesLength:number;
   warning: string;
+  addContact=false;
   public time: Date = new Date();
+  modalRef: BsModalRef;
   newTime: any;
+  deleteContact = [];
   messageForm = new FormGroup({
     message: new FormControl(null, [Validators.required, Validators.minLength(6)]),
     name: new FormControl(null, [Validators.required, Validators.minLength(6)]),
@@ -35,14 +42,23 @@ export class ChatActiveComponent implements OnInit {
     message: new FormControl(null, [Validators.required, Validators.minLength(6)]),
     // name: new FormControl(null, [Validators.required, Validators.minLength(6)]),
   });
-  constructor(private _location: Location, private httpService: HttpService, private router: Router) {
+  constructor(private _location: Location, private httpService: HttpService, private router: Router,private modalService: BsModalService) {
     this.newTime = this.time;
     console.log(this.newTime)
     this.httpService.getLoggedPlayer(true).subscribe(player => {
       this.userId.push(player[0].id);
       this.userName.push(player[0].name);
       this.httpService.getMessageUserByName(player[0].name).subscribe(user => {
+        this.deleteContact = user[0].deleteContact;
+        if(this.deleteContact.length > 0){
+
+          console.log("bedziemy usuwać kontakt");
+        }
+        // this.allMessageUsers = user[0].mesage;
+        // console.log(this.allMessageUsers)
+        // console.log(user[0].message)
         this.myContacts = user[0].contacts;
+        this.newContactMessages = user[0].message;
         this.newContact = user[0].newContact;
         console.log(this.newContact);
         console.log(this.myContacts);
@@ -51,13 +67,19 @@ export class ChatActiveComponent implements OnInit {
               return o !== el;
             });
         })
-        console.log(this.newContact)
+        this.myContacts.forEach((el)=>{
+          this.newContactMessages = this.newContactMessages.filter(o => {
+              return o.name !== el;
+            });
+        })
+        this.newContactMessagesLength = this.newContactMessages.length;
+        console.log(this.newContactMessages)
         if(this.newContact.length > 0){
-          // this.newContact.forEach((el)=>{
-          //   alert(el);
-          //     });
+           this.addContact = true;
+           console.log(this.addContact)
         }
         //UpdateMessageUserByName (newContact)
+
         const updateMessageUser = {
           id: this.userId[0],
           newContact:this.newContact
@@ -88,10 +110,108 @@ export class ChatActiveComponent implements OnInit {
     })
   }
 
+  refreshCompontentChat(){
+    this.newTime = this.time;
+    console.log(this.newTime)
+    this.httpService.getLoggedPlayer(true).subscribe(player => {
+      this.userId.push(player[0].id);
+      this.userName.push(player[0].name);
+      this.httpService.getMessageUserByName(player[0].name).subscribe(user => {
+        this.deleteContact = user[0].deleteContact;
+        // if(this.deleteContact.length > 0){
+        //
+        //   console.log("bedziemy usuwać kontakt");
+        // }
+        // this.allMessageUsers = user[0].mesage;
+        // console.log(this.allMessageUsers)
+        // console.log(user[0].message)
+        this.myContacts = user[0].contacts;
+        this.newContactMessages = user[0].message;
+        this.newContact = user[0].newContact;
+        console.log(this.newContact);
+        console.log(this.myContacts);
+        this.myContacts.forEach((el)=>{
+          this.newContact = this.newContact.filter(o => {
+              return o !== el;
+            });
+        })
+        this.myContacts.forEach((el)=>{
+          this.newContactMessages = this.newContactMessages.filter(o => {
+              return o.name !== el;
+            });
+        })
+        this.newContactMessagesLength = this.newContactMessages.length;
+        console.log(this.newContactMessages)
+        if(this.newContact.length > 0){
+           this.addContact = true;
+           console.log(this.addContact)
+        }
+        //UpdateMessageUserByName (newContact)
+
+        const updateMessageUser = {
+          id: this.userId[0],
+          newContact:this.newContact
+        };
+        this.httpService.updateMessageUser(updateMessageUser).subscribe(e=>{
+          console.log(e)
+          this.httpService.getMessageUserByName(this.userName[0]).subscribe(user=>{
+            this.unreadMessages = [];
+            this.myContacts = user[0].contacts;
+            console.log(this.myContacts)
+            // let messages =
+            // console.log(user[0].message)
+            for(let i=0; i<this.myContacts.length; i++){
+              let message = user[0].message;
+              // console.log(message)
+              message = message.filter(o => {
+                return o.name == this.myContacts[i];
+              });
+              message = message.filter(o => {
+                return o.read == false;
+              });
+              this.unreadMessages.push(message.length)
+              console.log(this.unreadMessages);
+              console.log(message);
+            }
+            this.newContact = user[0].newContact;
+            if(this.newContact.length < 1){
+              this.addContact = false;
+            }
+
+          })
+        })
+        // let messages =
+        // console.log(user[0].message)
+        // for(let i=0; i<this.myContacts.length; i++){
+        //   let message = user[0].message;
+        //   // console.log(message)
+        //   message = message.filter(o => {
+        //       return o.name == this.myContacts[i];
+        //     });
+        //   message = message.filter(o => {
+        //       return o.read == false;
+        //     });
+        //     this.unreadMessages.push(message.length)
+        //     console.log(message);
+        // }
+      })
+    })
+    this.httpService.getAllPMessageUsers().subscribe(users => {
+      this.MessageUsersName = users;
+      this.MessageUsersName = this.MessageUsersName.map(a => a.name);
+      console.log(this.MessageUsersName)
+    })
+    console.log(this.newContact.length)
+    console.log(this.newContact)
+
+  }
+
+
   ngOnInit() {
   }
 
   send(e) {
+    // this.refreshCompontentChat();
     this.messageName = [];
     this.messageMessage = [];
     this.messageName.push(this.messageForm.value.name);
@@ -145,7 +265,6 @@ export class ChatActiveComponent implements OnInit {
                   // console.log(user[0].message)
                   for(let i=0; i<this.myContacts.length; i++){
                     let message = user[0].message;
-                    // console.log(message)
                     message = message.filter(o => {
                         return o.name == this.myContacts[i];
                       });
@@ -193,7 +312,7 @@ export class ChatActiveComponent implements OnInit {
             this.UserContactMessages.push(this.addressed.slice(0, -1));
             const messageUser = ({
               id: sender[0].id,
-              newContact: this.newContact,
+              // newContact: this.newContact,
               message: this.MessageContact
             })
 
@@ -226,6 +345,115 @@ export class ChatActiveComponent implements OnInit {
           })
         })
 
+  }
+  openModal2(){
+      this.modalRef = this.modalService.show(DeleteContactComponent,{
+        initialState:{
+          title: this.deleteContact[0],
+          data:{}
+        }
+      });
+      this.modalRef.content.deleteNewContact.subscribe((value) => {
+        this.httpService.getMessageUserByName(this.userName[0]).subscribe(user=>{
+          console.log(this.myContacts);
+          let newDeletecontact = user[0].deleteContact;
+            this.myContacts = this.myContacts.filter(o => {
+                return o !== newDeletecontact[0];
+              });
+              console.log(this.myContacts);
+              newDeletecontact.shift();
+              const messageUser2 = ({
+                id: this.userId[0],
+                deleteContact:newDeletecontact,
+                contacts:this.myContacts
+              })
+              this.httpService.updateMessageUser(messageUser2).subscribe(user2=>{
+                console.log(user2)
+
+                ////////
+                this.deleteContact= [];
+                //////////////////
+
+                this.refreshCompontentChat();
+
+              })
+        })
+      })
+  }
+  openModal(){
+        console.log(this.newContact.length)
+        // console.log(this.newContact[0])
+//     let bsModalRef = this.modalService.show(..);
+// bsModalRef.content.action.take(1).subscribe((value) => {
+// 		console.log(value) // here you will get the value
+// 		});
+    this.modalRef = this.modalService.show(AddContactComponent,{
+      initialState:{
+        title: this.newContact[0],
+        data:{}
+      }
+    });
+    this.modalRef.content.addNewConntact.subscribe((value) => {
+    		if(value == true){
+          this.httpService.getMessageUserByName(this.userName[0]).subscribe(user =>{
+            this.UserContactMessages = user[0].contacts;
+            this.UserContactMessages.push(this.newContact[0]);
+            const messageUser = ({
+              id: user[0].id,
+              contacts: this.UserContactMessages,
+            })
+            this.httpService.updateMessageUser(messageUser).subscribe(user => {
+              console.log(user)
+                //////////////////////
+                this.deleteContact= [];
+                //////////////////
+                this.refreshCompontentChat();
+
+
+
+//////////////////////////////
+              })
+          })
+
+        } else if( value ==false){
+          this.httpService.getMessageUserByName(this.userName[0]).subscribe(user =>{
+
+            let userMessage = user[0].message;
+            console.log(userMessage)
+            let deleteUserMessage = this.newContact[0];
+            let deletuser = this.newContact[0];
+            this.httpService.getMessageUserByName(this.newContact[0]).subscribe(user2 =>{
+              userMessage = userMessage.filter(o => {
+                  return o.name !== deleteUserMessage;
+                });
+                this.deleteContact.push(this.userName[0]);
+                this.newContact.shift();
+                console.log(userMessage)
+            const messageUser = ({
+              id: user[0].id,
+              message: userMessage,
+              newContact:this.newContact
+            })
+            const messageUser2 = ({
+              id: user2[0].id,
+              deleteContact:this.deleteContact
+            })
+            this.httpService.updateMessageUser(messageUser).subscribe(user => {
+              console.log(user);
+              })
+            this.httpService.updateMessageUser(messageUser2).subscribe(user => {
+              console.log(user);
+              this.deleteContact= [];
+              //////////////////
+              this.refreshCompontentChat();
+
+
+
+              })
+          })
+        })
+        }
+    		});
   }
 
   contactSendMessage(e) {

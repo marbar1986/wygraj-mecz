@@ -8,4 +8,5 @@ export interface MessageUser{
   messageNewSender?:string;
   contacts?:Array<string>;
   newContact?:Array<string>;
+  deleteContact?:Array<string>;
 }

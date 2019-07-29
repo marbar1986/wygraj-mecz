@@ -1,6 +1,109 @@
 {
   "players": [
-
+    {
+      "name": "polaczek",
+      "email": "polaczek@o2",
+      "password": "aaaaaaaa",
+      "team": "Polska",
+      "logged": false,
+      "win": 0,
+      "draw": 0,
+      "loss": 0,
+      "activeGame": false,
+      "questions": [],
+      "answers": [],
+      "firstHalf": [
+        null
+      ],
+      "quart": 1,
+      "scoredFirsthalf": 0,
+      "scoredSecondHalf": 0,
+      "half": 1,
+      "endMatch": false,
+      "guest": false,
+      "id": 1,
+      "winHistory": [],
+      "drawHistory": [],
+      "lossHistory": []
+    },
+    {
+      "name": "niemiec",
+      "email": "niemiec@o2",
+      "password": "aaaaaaaa",
+      "team": "Niemcy",
+      "logged": false,
+      "win": 0,
+      "draw": 0,
+      "loss": 0,
+      "activeGame": false,
+      "questions": [],
+      "answers": [],
+      "firstHalf": [
+        null
+      ],
+      "quart": 1,
+      "scoredFirsthalf": 0,
+      "scoredSecondHalf": 0,
+      "half": 1,
+      "endMatch": false,
+      "guest": false,
+      "id": 2,
+      "winHistory": [],
+      "lossHistory": [],
+      "drawHistory": []
+    },
+    {
+      "name": "francuz",
+      "email": "francuz@o2",
+      "password": "aaaaaaaa",
+      "team": "Francja",
+      "logged": false,
+      "win": 0,
+      "draw": 0,
+      "loss": 0,
+      "activeGame": false,
+      "questions": [],
+      "answers": [],
+      "firstHalf": [
+        null
+      ],
+      "quart": 1,
+      "scoredFirsthalf": 0,
+      "scoredSecondHalf": 0,
+      "half": 1,
+      "endMatch": false,
+      "guest": false,
+      "id": 3,
+      "winHistory": [],
+      "lossHistory": [],
+      "drawHistory": []
+    },
+    {
+      "name": "paragwaj",
+      "email": "paragwaj@o2",
+      "password": "aaaaaaaa",
+      "team": "Paragwaj",
+      "logged": false,
+      "win": 0,
+      "draw": 0,
+      "loss": 0,
+      "activeGame": false,
+      "questions": [],
+      "answers": [],
+      "firstHalf": [
+        null
+      ],
+      "quart": 1,
+      "scoredFirsthalf": 0,
+      "scoredSecondHalf": 0,
+      "half": 1,
+      "endMatch": false,
+      "guest": false,
+      "id": 4,
+      "winHistory": [],
+      "lossHistory": [],
+      "drawHistory": []
+    }
   ],
   "guest": [],
   "questions": [
@@ -1374,7 +1477,81 @@
   "historyDraw": [],
   "historyLoss": [],
   "chat": [
-    
+    {
+      "name": "polaczek",
+      "email": "polaczek@o2",
+      "message": [],
+      "contacts": [
+        "paragwaj"
+      ],
+      "newContact": [],
+      "deleteContact": [],
+      "id": 1
+    },
+    {
+      "name": "niemiec",
+      "email": "niemiec@o2",
+      "message": [],
+      "contacts": [
+        "paragwaj"
+      ],
+      "newContact": [],
+      "deleteContact": [],
+      "id": 2
+    },
+    {
+      "name": "francuz",
+      "email": "francuz@o2",
+      "message": [],
+      "contacts": [
+        "paragwaj"
+      ],
+      "newContact": [],
+      "deleteContact": [],
+      "id": 3
+    },
+    {
+      "name": "paragwaj",
+      "email": "paragwaj@o2",
+      "message": [
+        {
+          "id": 1,
+          "name": "polaczek",
+          "text": "asdasdad ",
+          "data": "2019-07-28T22:28:22.292Z",
+          "read": false
+        },
+        {
+          "id": 2,
+          "name": "niemiec",
+          "text": "dasdasd ",
+          "data": "2019-07-28T22:28:44.151Z",
+          "read": false
+        },
+        {
+          "id": 2,
+          "name": "niemiec",
+          "text": "asdasd ",
+          "data": "2019-07-28T22:28:44.151Z",
+          "read": false
+        },
+        {
+          "id": 3,
+          "name": "francuz",
+          "text": "dasd sada ",
+          "data": "2019-07-28T22:31:04.911Z",
+          "read": false
+        }
+      ],
+      "contacts": [],
+      "newContact": [
+        "polaczek",
+        "niemiec",
+        "francuz"
+      ],
+      "deleteContact": [],
+      "id": 4
+    }
   ],
   "profile": {
     "name": "typicode"

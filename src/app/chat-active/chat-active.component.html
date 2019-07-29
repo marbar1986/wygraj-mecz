@@ -2,6 +2,19 @@
 <div class="back">
   <button type="button" class="btn btn-info" (click)="back()">powrót</button>
   </div>
+  <div *ngIf="deleteContact.length > 0; then deleteContactNow; else noDeleteContact"></div>
+  <ng-template #deleteContactNow>
+    <div class="element" style="margin-top:20%">
+    <button type="button" class="btn btn-danger btn-sm" (click)="openModal2()">Problem z użytkownikiem <span style="color:black;font-weight:bold;text-transform:uppercase">{{deleteContact[0]}}</span>  !!!</button>
+    </div>
+    </ng-template>
+    <ng-template #noDeleteContact>
+  <div *ngIf="addContact == true;then newContact; else noAddContact "></div>
+  <ng-template #newContact>
+  <div class="element" style="margin-bottom:2%">
+    <button type="button" class="btn btn-danger btn-sm" (click)="openModal()">nieznany użytkownik</button>
+    <div class=chatActive2>{{newContactMessagesLength}}</div>
+  </div>
   <div class="element" style="margin-bottom:1%">
     Moje kontakty:
     <!-- {{this.time | date:'yy/M/d, h:mm a'}} -->
@@ -9,6 +22,8 @@
     <!-- <div class="element"> -->
     <div class="element">
       <!-- <div class="chatActive" *ngFor="let messages of unreadMessages">{{messages}}</div> -->
+      <!-- <button type="button" class="btn btn-danger btn-sm" (click)="addNewcontactMessage($event)">wdasd asd
+      </button> -->
       <div  *ngFor="let contact of myContacts;let i=index" style="margin-right:2%">
         <!-- <div  *ngFor="let messages of unreadMessages[i-1]"> -->
           <!-- {{messages}} -->
@@ -18,7 +33,25 @@
       <div class=chatActive>{{unreadMessages[i]}}</div>
     </div>
     </div>
-    <!-- </div> -->
+    </ng-template>
+    <ng-template #noAddContact>
+      <div class="element" style="margin-bottom:1%">
+        Moje kontakty:
+        <!-- {{this.time | date:'yy/M/d, h:mm a'}} -->
+        </div>
+        <!-- <div class="element"> -->
+        <div class="element">
+          <!-- <div class="chatActive" *ngFor="let messages of unreadMessages">{{messages}}</div> -->
+          <div  *ngFor="let contact of myContacts;let i=index" style="margin-right:2%">
+            <!-- <div  *ngFor="let messages of unreadMessages[i-1]"> -->
+              <!-- {{messages}} -->
+            <!-- </div> -->
+          <button type="button" class="btn btn-primary btn-sm" (click)="contactSendMessage($event)">{{contact}}
+          </button>
+          <div class=chatActive>{{unreadMessages[i]}}</div>
+        </div>
+        </div>
+    </ng-template>
     <div *ngIf="addressed.length > 5; then sendMessageTo; else sendMessageChoice "></div>
     <ng-template #sendMessageTo>
       <div class="element" style="margin-top:2%">
@@ -89,5 +122,6 @@
   </div> -->
 </form>
   </div>
+  </ng-template>
   </ng-template>
 </div>
