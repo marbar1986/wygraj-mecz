@@ -348,6 +348,8 @@ export class ChatActiveComponent implements OnInit {
   }
   openModal2(){
       this.modalRef = this.modalService.show(DeleteContactComponent,{
+        backdrop  : 'static',
+     keyboard  : false,
         initialState:{
           title: this.deleteContact[0],
           data:{}
@@ -388,6 +390,8 @@ export class ChatActiveComponent implements OnInit {
 // 		console.log(value) // here you will get the value
 // 		});
     this.modalRef = this.modalService.show(AddContactComponent,{
+      backdrop  : 'static',
+   keyboard  : false,
       initialState:{
         title: this.newContact[0],
         data:{}
