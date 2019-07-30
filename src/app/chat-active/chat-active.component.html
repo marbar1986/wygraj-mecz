@@ -22,8 +22,7 @@
     <!-- <div class="element"> -->
     <div class="element">
       <!-- <div class="chatActive" *ngFor="let messages of unreadMessages">{{messages}}</div> -->
-      <!-- <button type="button" class="btn btn-danger btn-sm" (click)="addNewcontactMessage($event)">wdasd asd
-      </button> -->
+
       <div  *ngFor="let contact of myContacts;let i=index" style="margin-right:2%">
         <!-- <div  *ngFor="let messages of unreadMessages[i-1]"> -->
           <!-- {{messages}} -->
@@ -54,6 +53,9 @@
     </ng-template>
     <div *ngIf="addressed.length > 5; then sendMessageTo; else sendMessageChoice "></div>
     <ng-template #sendMessageTo>
+      <div class="element">
+        <button type="button" class="btn btn-danger btn-sm" (click)="backToAddPlayer()">wróć</button>
+        </div>
       <div class="element" style="margin-top:2%">
       <div class="elementsChat">
         <div class="elementChat" *ngFor="let message of historyChat">

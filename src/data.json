@@ -1369,9 +1369,74 @@
       "correctAnswer": "Adidas"
     }
   ],
-  "historyWin": [],
+  "historyWin": [
+    {
+      "userId": 1,
+      "rivalTeam": "Angola",
+      "rivalName": "Guest",
+      "result": "3:0",
+      "resultHalf": "0:0",
+      "rivalFlag": "./assets/Angola.png",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "rivalTeam": "Polska",
+      "rivalName": "polaczek",
+      "result": "4:3",
+      "resultHalf": "4:2",
+      "rivalFlag": "./assets/Polska.png",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "rivalTeam": "Niemcy",
+      "rivalName": "niemiec",
+      "result": "3:2",
+      "resultHalf": "2:1",
+      "rivalFlag": "./assets/Niemcy.png",
+      "id": 3
+    },
+    {
+      "userId": 1,
+      "rivalTeam": "Francja",
+      "rivalName": "francuz",
+      "result": "3:2",
+      "resultHalf": "1:0",
+      "rivalFlag": "./assets/Francja.png",
+      "id": 4
+    }
+  ],
   "historyDraw": [],
-  "historyLoss": [],
+  "historyLoss": [
+    {
+      "userId": 1,
+      "rivalTeam": "Francja",
+      "rivalName": "francuz",
+      "result": "3:4",
+      "resultHalf": "2:4",
+      "rivalFlag": "./assets/Francja.png",
+      "id": 1
+    },
+    {
+      "userId": 3,
+      "rivalTeam": "Francja",
+      "rivalName": "francuz",
+      "result": "2:3",
+      "resultHalf": "1:2",
+      "rivalFlag": "./assets/Francja.png",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "rivalTeam": "Polska",
+      "rivalName": "polaczek",
+      "result": "2:3",
+      "resultHalf": "0:1",
+      "rivalFlag": "./assets/Polska.png",
+      "id": 3
+    }
+  ],
   "chat": [
   ],
   "profile": {

@@ -210,6 +210,10 @@ export class ChatActiveComponent implements OnInit {
   ngOnInit() {
   }
 
+  backToAddPlayer(){
+    this.addressed = "";
+  }
+
   send(e) {
     // this.refreshCompontentChat();
     this.messageName = [];
