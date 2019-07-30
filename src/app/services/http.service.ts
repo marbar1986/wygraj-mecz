@@ -13,6 +13,8 @@ import { MessageUser } from '../register/Message';
 export class HttpService {
   constructor(private http:HttpClient) { }
 
+///Player
+
   getAllPlayers():Observable<Profile>{
     return this.http.get<Profile>("http://localhost:3000/players");
   }

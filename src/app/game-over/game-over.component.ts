@@ -28,7 +28,6 @@ export class GameOverComponent implements OnInit {
   constructor(private httpService: HttpService, private router: Router) {
     this.httpService.getLoggedPlayer(true).subscribe(player => {
       if(player[0].rivalName == undefined){
-        console.log("znowu tu");
       this.rivalId.push(player[0].rival);
       this.userTeam.push(player[0].team);
       this.userName.push(player[0].name);
@@ -62,16 +61,13 @@ export class GameOverComponent implements OnInit {
           rivalTeam:this.rivalTeam[0]
         });
         this.httpService.updatePlayer(updateRival).subscribe(user => {
-          console.log(user);
         })
         this.httpService.updatePlayer(updateUser).subscribe(user => {
-          console.log(user);
         })
 
       })
     }
     else{
-      console.log("teraz tutaj")
       this.rivalId.push(player[0].rival);
       this.rivalName.push(player[0].rivalName);
       this.rivalTeam.push(player[0].rivalTeam);
@@ -105,7 +101,6 @@ export class GameOverComponent implements OnInit {
         rivalFlag:this.rivalFlag[0]
       });
       this.httpService.postWinGame(post).subscribe(post=>{
-        console.log(post)
       })
     }
     if(this.resultUser[0] < this.resultRival[0]){
@@ -119,7 +114,6 @@ export class GameOverComponent implements OnInit {
 
       });
       this.httpService.postLossGame(post).subscribe(post=>{
-        console.log(post)
       })
     }
     if(this.resultUser[0] == this.resultRival[0]){
@@ -133,7 +127,6 @@ export class GameOverComponent implements OnInit {
 
       });
       this.httpService.postDrawGame(post).subscribe(post=>{
-        console.log(post)
       })
     }
     this.httpService.getLoggedPlayer(true).subscribe(player => {
@@ -165,7 +158,6 @@ export class GameOverComponent implements OnInit {
       guest:false
     });
     this.httpService.replacePlayer(replacePlayer).subscribe(post=>{
-      console.log(post);
       this.router.navigateByUrl('/logged');
     })
   })

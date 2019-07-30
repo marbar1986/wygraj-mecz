@@ -37,31 +37,22 @@ export class GuestComponent implements OnInit {
   constructor(private httpService:HttpService, private router: Router) {
     this.httpService.getGuest().subscribe(guest=>{
       this.guest = guest;
-      console.log(this.guest)
-      // if(this.guest.lengt > 0){
-      //   if(this.guest[0])
-      //   this.router.navigateByUrl('/gameGuest');
-      // }
       if(this.guest.length == 0){
-        console.log("nie ma");
       }
       else if(this.guest[0].id == 1){
         if(this.guest[0].activeGame == true){
           this.isActive = true;
         if(this.guest[0].turn == true){
           this.turn = true;
-            // this.router.navigateByUrl('/gameGuest');
         }
     }
     if(this.guest[0].activeGame == false){
       this.turn = false;
-      console.log(this.guest[0]);
       this.guestId.push(this.guest[0].id);
       this.userName = this.guest[0].name;
       this.userTeam = this.guest[0].team;
       this.userFlag = `./assets/${this.guest[0].team}.png`;
     }
-
 
       }
     })
@@ -86,9 +77,7 @@ export class GuestComponent implements OnInit {
       endMatch:false
     });
 
-
         this.httpService.addGuest(registerGuest).subscribe(playerInfo=>{
-          console.log(playerInfo)
           this.warning = "";
           this.guestForm.reset();
           this.httpService.getGuest().subscribe(guest=>{
@@ -102,7 +91,6 @@ export class GuestComponent implements OnInit {
   }
 
   game() {
-    console.log(this.rival[0])
     this.rivalName2 = this.rival[0].name;
     if (this.rivalName2.length > 2) {
       this.time = 5;
@@ -111,11 +99,9 @@ export class GuestComponent implements OnInit {
 
         if (this.time > 1) {
           this.time = this.time - 1
-          console.log(this.time)
         }
         else {
           this.time = "start ...";
-          // this.router.navigateByUrl('/game');
           const user = ({
             id: this.guestId[0],
             rival: this.rival[0].id,
@@ -136,10 +122,8 @@ export class GuestComponent implements OnInit {
             guest:true
           })
           this.httpService.updateGuest(user).subscribe(user => {
-            console.log(user)
           })
           this.httpService.updatePlayer(user2).subscribe(user2 => {
-            // console.log(user2)
             this.router.navigateByUrl('/gameGuest');
           })
           clearInterval(timetoStart)

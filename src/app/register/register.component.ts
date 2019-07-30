@@ -70,10 +70,8 @@ export class RegisterComponent implements OnInit {
     this.httpService.getAllPlayers().subscribe(player=>{
       this.registerPlayersEmail = player;
       this.registerPlayersEmail = this.registerPlayersEmail.map(a => a.email);
-      console.log(this.registerPlayersEmail)
       this.registerPlayersName = player;
       this.registerPlayersName = this.registerPlayersName.map(a => a.name);
-      console.log(this.registerPlayersName)
       if(this.registerPlayersEmail.includes(this.profileEmail = this.profileForm.value.email)){
         this.warning = "Gracz o takim adresie email już istnieje!!!";
         this.profileForm.reset();
@@ -84,7 +82,6 @@ export class RegisterComponent implements OnInit {
       }
       else{
         this.httpService.addPlayer(registerPlayer).subscribe(playerInfo=>{
-          console.log(playerInfo)
           this.warning = "";
           this.profileForm.reset();
           this.httpService.addMessageUser(messageUser).subscribe(playerInfo=>{

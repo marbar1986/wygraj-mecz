@@ -49,7 +49,6 @@ export class GameComponent implements OnInit {
       this.quart.push(player[0].quart);
       if(this.quart[0] <= 2){
         this.numberOfHalf.push(player[0].half);
-        console.log(this.numberOfHalf[0])
       }
       if(this.quart[0] > 2){
         const user = ({
@@ -57,17 +56,14 @@ export class GameComponent implements OnInit {
           half:2
         });
         this.httpService.updatePlayer(user).subscribe(user => {
-          console.log(user);
         })
         this.numberOfHalf.push(player[0].half);
-        console.log(this.numberOfHalf[0])
       }
       this.rounds.push(player[0].round);
       this.resultFirstHalfUser = player[0].scoredFirsthalf;
       this.resultUser = player[0].scoredFirsthalf + player[0].scoredSecondHalf;
       if(player[0].firstHalf[0] == 0){
         this.endTourn = true;
-        console.log("jest")
       }
       this.rivalId.push(player[0].rival);
       this.userName = player[0].name;
@@ -78,14 +74,11 @@ export class GameComponent implements OnInit {
       this.questionsAllId = player[0].questions;
       this.answersAllCorrect = player[0].answers;
 
-      console.log(this.questionsAllId)
-      console.log(this.answersAllCorrect)
       this.httpService.getPlayerById(this.rivalId[0]).subscribe(rival=>{
+
         this.resultFirstHalfRival = rival[0].scoredFirsthalf;
         this.resultRival = rival[0].scoredFirsthalf + rival[0].scoredSecondHalf;
         if(this.rounds[0] == "deffend"){
-          console.log("jest defend");
-          console.log(rival[0].questions)
           this.questionsAllId = rival[0].questions;
           this.answersAllCorrect = rival[0].answers;
           for(let i=0; i<=this.answersAllCorrect.length;i++){
@@ -97,8 +90,6 @@ export class GameComponent implements OnInit {
           }
           this.RoundActionNumber.push(this.questionsAllId);
           this.RoundActionNumber = [this.questionsAllId.length];
-          console.log(this.questionsAllId);
-          console.log(this.answersAllCorrect);
           const user = ({
             id:this.rivalId[0],
             questions:this.questionsAllId,
@@ -108,7 +99,6 @@ export class GameComponent implements OnInit {
             let newUser = [];
             newUser.push(user);
             if(newUser[0].questions.length == 0){
-                console.log(user)
                 this.endTourn = true;
                 this.question="";
             }
@@ -123,7 +113,6 @@ export class GameComponent implements OnInit {
 
       if(this.questionsAllId.length != this.answersAllCorrect.length){
       this.actuallyQuestionId.push(player[0].questions.pop());
-      console.log(this.actuallyQuestionId)
       }
     }
     })
@@ -140,17 +129,12 @@ export class GameComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
-
   questions(){
     this.timer = true;
     if(this.actuallyQuestionId.length > 0){
       this.httpService.getQuestionById(this.actuallyQuestionId[0]).subscribe(question=>{
-        console.log(question)
         this.question = question[0].question;
         this.correctAnswer.push(question[0].correctAnswer);
-        console.log(this.correctAnswer[0])
         this.questionsAll.push(question[0]);
         this.questionsAllId.push(question[0].id);
         this.answersAll.push(this.questionsAll[0].answers[0].a);
@@ -162,15 +146,12 @@ export class GameComponent implements OnInit {
         this.answer2 = this.answersAll[1];
         this.answer3 = this.answersAll[2];
         this.answer4= this.answersAll[3];
-        console.log(this.answersAll)
         const user = ({
           id:this.userId[0],
           questions:this.questionsAllId,
           answers:this.answersAllCorrect
         })
         this.httpService.updatePlayer(user).subscribe(user =>{
-          console.log(user)
-
         })
         this.questionsAll = [];
         this.answersAll = [];
@@ -180,10 +161,8 @@ export class GameComponent implements OnInit {
       if(this.rounds[0] == "attack"){
 
     this.httpService.getQuestionById(Math.floor((Math.random() * 104) + 1)).subscribe(question=>{
-      console.log(question)
       this.question = question[0].question;
       this.correctAnswer.push(question[0].correctAnswer);
-      console.log(this.correctAnswer[0])
       this.questionsAll.push(question[0]);
       this.questionsAllId.push(question[0].id);
       this.answersAll.push(this.questionsAll[0].answers[0].a);
@@ -195,14 +174,12 @@ export class GameComponent implements OnInit {
       this.answer2 = this.answersAll[1];
       this.answer3 = this.answersAll[2];
       this.answer4= this.answersAll[3];
-      console.log(this.answersAll)
       const user = ({
         id:this.userId[0],
         questions:this.questionsAllId,
         answers:this.answersAllCorrect
       })
       this.httpService.updatePlayer(user).subscribe(user =>{
-        console.log(user)
       })
       this.questionsAll = [];
       this.answersAll = [];
@@ -213,7 +190,6 @@ export class GameComponent implements OnInit {
     this.httpService.getQuestionById(this.questionsAllId[0]).subscribe(question=>{
       this.question = question[0].question;
       this.correctAnswer.push(question[0].correctAnswer);
-      console.log(this.correctAnswer[0])
       this.questionsAll.push(question[0]);
       this.questionsAllId.push(question[0].id);
       this.answersAll.push(this.questionsAll[0].answers[0].a);
@@ -225,7 +201,6 @@ export class GameComponent implements OnInit {
       this.answer2 = this.answersAll[1];
       this.answer3 = this.answersAll[2];
       this.answer4= this.answersAll[3];
-      console.log(this.answersAll);
       this.questionsAll = [];
       this.answersAll = [];
 })
@@ -247,11 +222,8 @@ export class GameComponent implements OnInit {
         firstHalf: [this.RoundActionNumber[0]]
       })
       this.httpService.updatePlayer(user).subscribe(user =>{
-
-        console.log(user)
         if(this.RoundActionNumber[0] == 0){
           this.endTourn = true;
-          console.log("jest")
         }
       })
       this.question="";
@@ -263,22 +235,17 @@ export class GameComponent implements OnInit {
       this.httpService.getPlayerById(this.rivalId[0]).subscribe(rival=>{
         this.questionsAllId = [];
         this.questionsAllId = rival[0].questions;
-        console.log(this.questionsAll)
         this.questionsAllId.shift();
-        console.log(this.questionsAllId);
       const user = ({
         id:this.rivalId[0],
         goal:this.goals,
         questions:this.questionsAllId
-
       })
+
       this.RoundActionNumber = [this.questionsAllId.length];
       this.httpService.updatePlayer(user).subscribe(user =>{
-
-        console.log(user)
         if(this.questionsAllId.length == 0){
           this.endTourn = true;
-          console.log("jest")
         }
       })
     })
@@ -287,17 +254,13 @@ export class GameComponent implements OnInit {
     }
   }
   if(this.timer == false){
-    console.log("nic sie nie wydarzy")
   }
   }
 
   answer(e){
-    // zatrzyma timer
     this.timer = false;
-    console.log(e.target)
     if(this.rounds[0] == "attack"){
     if(e.target.innerHTML == this.correctAnswer[0]){
-      console.log("zmieniam");
       e.target.style.background = "green";
       setTimeout(()=>{
       this.answersAllCorrect.push(true);
@@ -311,10 +274,8 @@ export class GameComponent implements OnInit {
       })
 
       this.httpService.updatePlayer(user).subscribe(user =>{
-        console.log(user)
         if(this.RoundActionNumber[0] == 0){
           this.endTourn = true;
-          console.log("jest")
         }
       })
       this.question="";
@@ -335,11 +296,8 @@ export class GameComponent implements OnInit {
         firstHalf: [this.RoundActionNumber[0]]
       })
       this.httpService.updatePlayer(user).subscribe(user =>{
-
-        console.log(user)
         if(this.RoundActionNumber[0] == 0){
           this.endTourn = true;
-          console.log("jest")
         }
       })
       this.question="";
@@ -351,7 +309,6 @@ export class GameComponent implements OnInit {
   }
   if(this.rounds[0] == "deffend"){
 
-
     if(e.target.innerHTML == this.correctAnswer[0]){
       e.target.style.background = "green";
 
@@ -362,22 +319,17 @@ export class GameComponent implements OnInit {
         this.answersAllCorrect = rival[0].answers;
         this.questionsAllId.shift();
         this.answersAllCorrect.shift();
-        console.log(this.questionsAllId);
-        console.log(this.answersAllCorrect);
 
       const user = ({
         id:this.rivalId[0],
         questions:this.questionsAllId,
         answers:this.answersAllCorrectDeffend
-
       })
+
       this.RoundActionNumber = [this.questionsAllId.length];
       this.httpService.updatePlayer(user).subscribe(user =>{
-
-        console.log(user)
         if(this.questionsAllId.length == 0){
           this.endTourn = true;
-          console.log("jest")
         }
       })
     })
@@ -395,22 +347,17 @@ export class GameComponent implements OnInit {
       this.httpService.getPlayerById(this.rivalId[0]).subscribe(rival=>{
         this.questionsAllId = [];
         this.questionsAllId = rival[0].questions;
-        console.log(this.questionsAll)
         this.questionsAllId.shift();
-        console.log(this.questionsAllId);
       const user = ({
         id:this.rivalId[0],
         goal:this.goals,
         questions:this.questionsAllId
-
       })
+
       this.RoundActionNumber = [this.questionsAllId.length];
       this.httpService.updatePlayer(user).subscribe(user =>{
-
-        console.log(user)
         if(this.questionsAllId.length == 0){
           this.endTourn = true;
-          console.log("jest")
         }
       })
     })
@@ -425,27 +372,23 @@ export class GameComponent implements OnInit {
   numberOfAction(){
 this.RoundActionNumber = [];
 this.RoundActionNumber.push(Math.floor((Math.random() * 4) + 1));
-console.log(this.RoundActionNumber[0])
 const user = ({
   id:this.userId[0],
   firstHalf:[this.RoundActionNumber[0]],
   numberOfAction:1,
 })
 this.httpService.updatePlayer(user).subscribe(user =>{
-  console.log(user)
 })
 
   }
 
   endOfTurn(){
     if(this.rounds[0] == "attack"){
-// if(this.quart[0] == 1){
     const user = ({
       id: this.userId[0],
       turn:false,
       round:"deffend",
       numberOfAction:0,
-      // quart:2
     });
     const rival = ({
       id: this.rivalId[0],
@@ -453,18 +396,14 @@ this.httpService.updatePlayer(user).subscribe(user =>{
       round:"deffend",
       numberOfAction:999,
       firstHalf:[999],
-      // quart:1
     });
     this.httpService.updatePlayer(user).subscribe(user => {
-      console.log(user);
     })
     this.httpService.updatePlayer(rival).subscribe(rival => {
-      console.log(rival);
       this.router.navigateByUrl('/logged');
     })
   }
   if(this.rounds[0] == "deffend"){
-    console.log(this.quart[0])
     if(this.numberOfHalf[0] == 1 && this.quart[0] == 1){
       this.httpService.getPlayerById(this.rivalId[0]).subscribe(updateRival=>{
     const user = ({
@@ -486,10 +425,8 @@ this.httpService.updatePlayer(user).subscribe(user =>{
       quart:2
     });
     this.httpService.updatePlayer(user).subscribe(user => {
-      console.log(user);
     })
     this.httpService.updatePlayer(rival).subscribe(rival => {
-      console.log(rival);
       this.router.navigateByUrl('/logged');
     })
   })
@@ -517,10 +454,8 @@ this.httpService.updatePlayer(user).subscribe(user =>{
       half:2
     });
     this.httpService.updatePlayer(user).subscribe(user => {
-      console.log(user);
     })
     this.httpService.updatePlayer(rival).subscribe(rival => {
-      console.log(rival);
       this.router.navigateByUrl('/logged');
     })
   })
@@ -548,10 +483,8 @@ this.httpService.updatePlayer(user).subscribe(user =>{
       half:2
     });
     this.httpService.updatePlayer(user).subscribe(user => {
-      console.log(user);
     })
     this.httpService.updatePlayer(rival).subscribe(rival => {
-      console.log(rival);
       this.router.navigateByUrl('/logged');
     })
   })
@@ -580,10 +513,8 @@ this.httpService.updatePlayer(user).subscribe(user =>{
     });
 
     this.httpService.updatePlayer(user).subscribe(user => {
-      console.log(user);
     })
     this.httpService.updatePlayer(rival).subscribe(rival => {
-      console.log(rival);
       this.router.navigateByUrl('/gameOver');
     })
   })
@@ -599,7 +530,6 @@ this.httpService.updatePlayer(user).subscribe(user =>{
     })
     this.httpService.updatePlayer(user).subscribe(user => {
       this.router.navigateByUrl('/gamechosse');
-
     })
   }
 

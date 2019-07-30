@@ -27,7 +27,6 @@ export class GameOverGuestComponent implements OnInit {
   constructor(private httpService: HttpService, private router: Router) {
     this.httpService.getGuest().subscribe(player => {
       if(player[0].rivalName == undefined){
-        console.log("znowu tu");
       this.rivalId.push(player[0].rival);
       this.userTeam.push(player[0].team);
       this.userName.push(player[0].name);
@@ -61,16 +60,13 @@ export class GameOverGuestComponent implements OnInit {
           rivalTeam:this.rivalTeam[0]
         });
         this.httpService.updatePlayer(updateRival).subscribe(user => {
-          console.log(user);
         })
         this.httpService.updateGuest(updateUser).subscribe(user => {
-          console.log(user);
         })
 
       })
     }
     else{
-      console.log("teraz tutaj")
       this.rivalId.push(player[0].rival);
       this.rivalName.push(player[0].rivalName);
       this.rivalTeam.push(player[0].rivalTeam);

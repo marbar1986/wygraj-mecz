@@ -35,50 +35,55 @@ export class LoggedPlayerComponent implements OnInit {
   endMatch: boolean;
   guest = false;
   constructor(private httpService: HttpService, private router: Router) {
-    console.log("dziaam po powrocie");
     this.httpService.getLoggedPlayer(true).subscribe(player => {
       this.httpService.getHistoryWinByUserId(player[0].id).subscribe(history => {
-        console.log(history)
-        console.log(history.length)
+
         const user = ({
           id: player[0].id,
           win: history.length,
           winHistory: history
         })
-        this.httpService.updatePlayer(user).subscribe(user => {
 
+        this.httpService.updatePlayer(user).subscribe(user => {
           this.userWin = player[0].win;
         })
+
       })
+
       this.httpService.getHistoryLossByUserId(player[0].id).subscribe(history => {
-        console.log(history)
+
         const user = ({
           id: player[0].id,
           loss: history.length,
           lossHistory: history
         })
+
         this.httpService.updatePlayer(user).subscribe(user => {
-          console.log(user)
           this.userLoss = player[0].loss;
         })
+
       })
+
       this.httpService.getHistoryDrawByUserId(player[0].id).subscribe(history => {
-        console.log(history.length)
-        console.log(history)
+
         const user = ({
           id: player[0].id,
           draw: history.length,
           drawHistory: history
         })
+
         this.httpService.updatePlayer(user).subscribe(user => {
-          console.log(user)
           this.userDraw = player[0].draw;
         })
+
       })
+
       this.endMatch = player[0].endMatch;
+
       if (this.endMatch == true) {
         this.router.navigateByUrl('/gameOver');
       }
+
       this.numberOfHalf = player[0].half;
       this.resultFirstHalfUser = player[0].scoredFirsthalf;
       this.resultUser = player[0].scoredFirsthalf + player[0].scoredSecondHalf;
@@ -98,32 +103,32 @@ export class LoggedPlayerComponent implements OnInit {
         if(player[0].turn == false){
           this.isTurn.push(false);
         }
-        // this.router.navigateByUrl('/gameVsGuest');
-        console.log("ok")
       }
+
       else{
       if (this.activeGame[0] == true) {
         this.rivalId = player[0].rival;
         this.httpService.getPlayerById(this.rivalId).subscribe(rival => {
-          console.log(rival)
+
           this.resultFirstHalfRival = rival[0].scoredFirsthalf;
           this.resultRival = rival[0].scoredFirsthalf + rival[0].scoredSecondHalf;
           this.rivalFlag = `./assets/${rival[0].team}.png`;
           this.rivalName = rival[0].name;
           this.rivalName2 = rival[0].name;
           this.rivalTeam = rival[0].team;
+
         })
       }
       if (this.activeGame[0] == true && player[0].turn == true) {
         this.isTurn.push(player[0].turn);
-        console.log(this.isTurn[0])
-        console.log(this.activeGame[0])
       }
       if (this.activeGame[0] == true && player[0].turn == false) {
         this.isTurn.push(player[0].turn);
       }
 }
+
     })
+
   }
 
   ngOnInit() {
@@ -131,6 +136,7 @@ export class LoggedPlayerComponent implements OnInit {
 
   searchOpponent() {
     this.httpService.getPlayerByAvctivegame(false, false).subscribe(player => {
+
       this.opponent = player[Math.floor(Math.random() * player.length)];
       this.rival.push(this.opponent);
       if (this.rival[0] == undefined) {
@@ -141,10 +147,12 @@ export class LoggedPlayerComponent implements OnInit {
         this.rivalTeam = this.opponent.team;
         this.rivalFlag = `./assets/${this.opponent.team}.png`;
       }
+
     })
+
   }
+
   game() {
-    console.log(this.rival[0])
     this.rivalName2 = this.rival[0].name;
     if (this.rivalName2.length > 4) {
       this.time = 5;
@@ -157,7 +165,6 @@ export class LoggedPlayerComponent implements OnInit {
         }
         else {
           this.time = "start ...";
-          // this.router.navigateByUrl('/game');
           const user = ({
             id: this.userId[0],
             rival: this.rival[0].id,
@@ -177,7 +184,6 @@ export class LoggedPlayerComponent implements OnInit {
             round: "deffend"
           })
           this.httpService.updatePlayer(user).subscribe(user => {
-            console.log(user)
           })
           this.httpService.updatePlayer(user2).subscribe(user2 => {
             this.router.navigateByUrl('/game');
@@ -193,6 +199,7 @@ export class LoggedPlayerComponent implements OnInit {
   gameContinue() {
     this.router.navigateByUrl('/game');
   }
+
   gameContinueGuest() {
     this.router.navigateByUrl('/gameVsGuest');
   }
@@ -206,6 +213,7 @@ export class LoggedPlayerComponent implements OnInit {
       this.router.navigateByUrl('/history');
     })
   }
+
   historyLoss() {
     const user = ({
       id: this.userId[0],
@@ -214,8 +222,8 @@ export class LoggedPlayerComponent implements OnInit {
     this.httpService.updatePlayer(user).subscribe(user => {
       this.router.navigateByUrl('/history');
     })
-
   }
+
   historyDraw() {
     const user = ({
       id: this.userId[0],
@@ -225,16 +233,15 @@ export class LoggedPlayerComponent implements OnInit {
       this.router.navigateByUrl('/history');
     })
   }
+
   logOut() {
     const user = ({
       id: this.userId[0],
       logged: false
     })
     this.httpService.updatePlayer(user).subscribe(user => {
-      console.log(user)
     })
-    console.log(this.userId)
-  }
 
+  }
 
 }

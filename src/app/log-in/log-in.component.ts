@@ -22,11 +22,12 @@ export class LogInComponent implements OnInit {
   }
 
   onSubmit() {
+
     this.logInEmail = this.logInForm.value.email;
     this.logInPassword = this.logInForm.value.password;
-    console.log(this.logInEmail);
-    console.log(this.logInPassword);
+
     this.httpService.getPlayerByEmail(this.logInEmail).subscribe(player => {
+      
       if (player.length == 1 && player[0].password == this.logInPassword) {
           const user = ({
             id:player[0].id,
