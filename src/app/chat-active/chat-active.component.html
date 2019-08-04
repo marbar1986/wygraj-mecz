@@ -17,34 +17,21 @@
   </div>
   <div class="element" style="margin-bottom:1%">
     Moje kontakty:
-    <!-- {{this.time | date:'yy/M/d, h:mm a'}} -->
     </div>
-    <!-- <div class="element"> -->
     <div class="element">
-      <!-- <div class="chatActive" *ngFor="let messages of unreadMessages">{{messages}}</div> -->
-
       <div  *ngFor="let contact of myContacts;let i=index" style="margin-right:2%">
-        <!-- <div  *ngFor="let messages of unreadMessages[i-1]"> -->
-          <!-- {{messages}} -->
-        <!-- </div> -->
       <button type="button" class="btn btn-primary btn-sm" (click)="contactSendMessage($event)">{{contact}}
       </button>
-      <div class=chatActive>{{unreadMessages[i]}}</div>
+      <div class="chatActive">{{unreadMessages[i]}}</div>
     </div>
     </div>
     </ng-template>
     <ng-template #noAddContact>
       <div class="element" style="margin-bottom:1%">
         Moje kontakty:
-        <!-- {{this.time | date:'yy/M/d, h:mm a'}} -->
         </div>
-        <!-- <div class="element"> -->
         <div class="element">
-          <!-- <div class="chatActive" *ngFor="let messages of unreadMessages">{{messages}}</div> -->
           <div  *ngFor="let contact of myContacts;let i=index" style="margin-right:2%">
-            <!-- <div  *ngFor="let messages of unreadMessages[i-1]"> -->
-              <!-- {{messages}} -->
-            <!-- </div> -->
           <button type="button" class="btn btn-primary btn-sm" (click)="contactSendMessage($event)">{{contact}}
           </button>
           <div class=chatActive>{{unreadMessages[i]}}</div>
@@ -57,9 +44,11 @@
         <button type="button" class="btn btn-danger btn-sm" (click)="backToAddPlayer()">wróć</button>
         </div>
       <div class="element" style="margin-top:2%">
-      <div class="elementsChat">
+      <div class="elementsChat" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <div>
         <div class="elementChat" *ngFor="let message of historyChat">
           <span style="color:red">{{message.name}} : </span><span style="color:black">{{message.text}}</span>
+          </div>
           </div>
           </div>
           </div>
@@ -79,9 +68,6 @@
         <div class="element" style="padding-top:2%">
           <button type="submit" [disabled]="!messageForm2.valid" class="btn btn-danger" style = "margin-right:2%" >Wyślij do {{addressed}}</button>
         </div>
-        <!-- <div class="element">
-          <span style="font-size:20px;color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">{{warning}}</span>
-        </div> -->
       </form>
       </ng-template>
 <ng-template #sendMessageChoice>
@@ -112,16 +98,11 @@
       <div *ngIf="messageForm.get('name').invalid && messageForm.get('name').errors.minlength"><sup style="color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">*Min. 6 znaków</sup></div>
     </div>
   <div class="element" style="padding-top:2%">
-    <!-- <button type="submit" [disabled]="!messageForm.valid" class="btn btn-danger" style = "margin-right:2%" (click)="send()">Wyślij</button> -->
     <button type="submit" (click) = "send($event)" [disabled]="!messageForm.valid" class="btn btn-danger" style = "margin-right:2%">Wyślij</button>
-    <!-- <button type="submit" [disabled]="!messageForm.valid" class="btn btn-danger" (click)="sendAndAddContact">Wyślij i dodaj Kontakt</button> -->
   </div>
   <div class="element" style="padding-top:2%;text-align:center">
     {{warning}}
   </div>
-  <!-- <div class="element">
-    <span style="font-size:20px;color:red;text-shadow: 0 0 3px lightgrey, 0 0 5px white;">{{warning}}</span>
-  </div> -->
 </form>
   </div>
   </ng-template>

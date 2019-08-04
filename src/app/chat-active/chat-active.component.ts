@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Location } from '@angular/common';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpService } from '../services/http.service';
@@ -11,7 +11,9 @@ import { DeleteContactComponent } from '../delete-contact';
   templateUrl: './chat-active.component.html',
   styleUrls: ['./chat-active.component.scss']
 })
-export class ChatActiveComponent implements OnInit {
+export class ChatActiveComponent implements OnInit{
+
+
   windowHeight = window.innerHeight;
   unreadMessages = [];
   userId = [];
@@ -42,6 +44,7 @@ export class ChatActiveComponent implements OnInit {
     message: new FormControl(null, [Validators.required, Validators.minLength(6)]),
   });
   constructor(private _location: Location, private httpService: HttpService, private router: Router,private modalService: BsModalService) {
+
     this.newTime = this.time;
     this.httpService.getLoggedPlayer(true).subscribe(player => {
       this.userId.push(player[0].id);
@@ -89,6 +92,7 @@ export class ChatActiveComponent implements OnInit {
       this.MessageUsersName = this.MessageUsersName.map(a => a.name);
     })
   }
+
 
   refreshCompontentChat(){
     this.newTime = this.time;
@@ -353,7 +357,6 @@ export class ChatActiveComponent implements OnInit {
 
   contactSendMessage(e) {
     this.historyChat = [];
-
     this.httpService.getMessageUserByName(this.userName[0]).subscribe(user => {
       this.httpService.getMessageUserByName(e.target.innerHTML.slice(0, -1)).subscribe(user2 => {
         let message = user[0].message;
@@ -395,10 +398,12 @@ export class ChatActiveComponent implements OnInit {
           this.historyChat = historyChat1;
           this.historyChat.push(...historyChat2);
           this.historyChat.sort((d1, d2) => new Date(d1.data).getTime() - new Date(d2.data).getTime());
+
       })
     })
 
 }
+
   back() {
     this._location.back();
   }
