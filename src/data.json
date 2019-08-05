@@ -1369,7 +1369,8 @@
       "correctAnswer": "Adidas"
     }
   ],
-  "historyWin": [],
+  "historyWin": [
+  ],
   "historyDraw": [],
   "historyLoss": [],
   "chat": [
