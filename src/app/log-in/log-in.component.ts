@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpService } from '../services/http.service';
 import { Router } from '@angular/router';
@@ -27,7 +27,6 @@ export class LogInComponent implements OnInit {
     this.logInPassword = this.logInForm.value.password;
 
     this.httpService.getPlayerByEmail(this.logInEmail).subscribe(player => {
-      
       if (player.length == 1 && player[0].password == this.logInPassword) {
           const user = ({
             id:player[0].id,

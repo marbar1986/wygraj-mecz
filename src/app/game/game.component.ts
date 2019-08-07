@@ -209,6 +209,7 @@ export class GameComponent implements OnInit {
   }
 
 }
+
   getNumberOfTimer(number:number):void{
     if(this.timer == true){
     if(this.rounds[0] == "attack"){

@@ -1371,8 +1371,10 @@
   ],
   "historyWin": [
   ],
-  "historyDraw": [],
-  "historyLoss": [],
+  "historyDraw": [
+  ],
+  "historyLoss": [
+  ],
   "chat": [
   ],
   "profile": {

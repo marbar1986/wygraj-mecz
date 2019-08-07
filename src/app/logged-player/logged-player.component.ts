@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { Router } from '@angular/router';
 
@@ -37,7 +37,6 @@ export class LoggedPlayerComponent implements OnInit {
   constructor(private httpService: HttpService, private router: Router) {
     this.httpService.getLoggedPlayer(true).subscribe(player => {
       this.httpService.getHistoryWinByUserId(player[0].id).subscribe(history => {
-
         const user = ({
           id: player[0].id,
           win: history.length,
@@ -161,7 +160,6 @@ export class LoggedPlayerComponent implements OnInit {
 
         if (this.time > 1) {
           this.time = this.time - 1
-          console.log(this.time)
         }
         else {
           this.time = "start ...";
