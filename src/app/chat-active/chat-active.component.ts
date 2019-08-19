@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { AddContactComponent } from '../add-contact';
 import { DeleteContactComponent } from '../delete-contact';
+import { DeleteExistingContactComponent } from '../delete-existing-contact';
+import { ConfirmDeleteExistingContactComponent } from '../confirm-delete-existing-contact';
 @Component({
   selector: 'app-chat-active',
   templateUrl: './chat-active.component.html',
@@ -36,6 +38,7 @@ export class ChatActiveComponent implements OnInit{
   modalRef: BsModalRef;
   newTime: any;
   deleteContact = [];
+  deleteExistingContact = [];
   messageForm = new FormGroup({
     message: new FormControl(null, [Validators.required, Validators.minLength(6)]),
     name: new FormControl(null, [Validators.required, Validators.minLength(6)]),
@@ -50,6 +53,7 @@ export class ChatActiveComponent implements OnInit{
       this.userId.push(player[0].id);
       this.userName.push(player[0].name);
       this.httpService.getMessageUserByName(player[0].name).subscribe(user => {
+        this.deleteExistingContact = user[0].deleteExistingContact;
         this.deleteContact = user[0].deleteContact;
         this.myContacts = user[0].contacts;
         this.newContactMessages = user[0].message;
@@ -100,6 +104,7 @@ export class ChatActiveComponent implements OnInit{
       this.userId.push(player[0].id);
       this.userName.push(player[0].name);
       this.httpService.getMessageUserByName(player[0].name).subscribe(user => {
+        this.deleteExistingContact = user[0].deleteExistingContact;
         this.deleteContact = user[0].deleteContact;
         this.myContacts = user[0].contacts;
         this.newContactMessages = user[0].message;
@@ -299,6 +304,35 @@ export class ChatActiveComponent implements OnInit{
         })
       })
   }
+  openModal4(){
+      this.modalRef = this.modalService.show(ConfirmDeleteExistingContactComponent,{
+        backdrop  : 'static',
+     keyboard  : false,
+        initialState:{
+          title: this.deleteExistingContact[0],
+          data:{}
+        }
+      });
+      this.modalRef.content.deleteNewContact.subscribe((value) => {
+        this.httpService.getMessageUserByName(this.userName[0]).subscribe(user=>{
+          let newDeletecontact = user[0].deleteExistingContact;
+            this.myContacts = this.myContacts.filter(o => {
+                return o !== newDeletecontact[0];
+              });
+              newDeletecontact.shift();
+              console.log(newDeletecontact)
+              const messageUser2 = ({
+                id: this.userId[0],
+                deleteExistingContact:newDeletecontact,
+                contacts:this.myContacts
+              })
+              this.httpService.updateMessageUser(messageUser2).subscribe(user2=>{
+                this.deleteExistingContact= [];
+                this.refreshCompontentChat();
+              })
+        })
+      })
+  }
   openModal(){
     this.modalRef = this.modalService.show(AddContactComponent,{
       backdrop  : 'static',
@@ -404,6 +438,50 @@ export class ChatActiveComponent implements OnInit{
 
 }
 
+openModal3(e){
+  let el = e.target;
+  let deleteThisContact = el.parentNode.firstChild.innerHTML.slice(0, -1);
+  this.deleteExistingContact.push(deleteThisContact);
+  this.modalRef = this.modalService.show(DeleteExistingContactComponent,{
+    backdrop  : 'static',
+ keyboard  : false,
+    initialState:{
+      title: deleteThisContact,
+      data:{}
+    }
+  });
+  this.modalRef.content.deleteExistingContact.subscribe((value) => {
+    this.httpService.getMessageUserByName(this.userName[0]).subscribe(user=>{
+      // let allDeleteExistingContact = user[0].deleteExistingContact;
+      //     allDeleteExistingContact.push(deleteThisContact);
+        this.myContacts = this.myContacts.filter(o => {
+            return o !== this.deleteExistingContact[0];
+          });
+          console.log(this.myContacts);
+          // newDeletecontact.shift();
+          const messageUser2 = ({
+            id: this.userId[0],
+            // deleteExistingContact:allDeleteExistingContact,
+            contacts:this.myContacts
+          })
+          this.httpService.getMessageUserByName(deleteThisContact).subscribe(user2=>{
+            let allDeleteExistingContact = user2[0].deleteExistingContact;
+                allDeleteExistingContact.push(this.userName[0]);
+                const messageUser = ({
+                  id: user2[0].id,
+                  deleteExistingContact:allDeleteExistingContact,
+                  // contacts:this.myContacts
+                })
+          this.httpService.updateMessageUser(messageUser2).subscribe(user2=>{
+            this.httpService.updateMessageUser(messageUser).subscribe(user2=>{
+              this.deleteExistingContact= [];
+              this.refreshCompontentChat();
+            })
+          })
+        })
+    })
+  })
+}
   back() {
     this._location.back();
   }

@@ -65,7 +65,8 @@ export class RegisterComponent implements OnInit {
       message:[],
       contacts:[],
       newContact:[],
-      deleteContact:[]
+      deleteContact:[],
+      deleteExistingContact:[]
     });
     this.httpService.getAllPlayers().subscribe(player=>{
       this.registerPlayersEmail = player;

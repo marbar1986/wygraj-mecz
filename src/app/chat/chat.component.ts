@@ -14,10 +14,10 @@ export class ChatComponent implements OnInit {
   constructor(private httpService: HttpService, private router: Router) {
     this.httpService.getLoggedPlayer(true).subscribe(player => {
       this.httpService.getMessageUserByName(player[0].name).subscribe(user => {
-        if(user[0].deleteContact.length > 0){
+        if(user[0].deleteContact.length > 0 || user[0].deleteExistingContact.length > 0){
           this.newMessages = "!";
         }
-        else if(user[0].deleteContact.length == 0)
+        else if(user[0].deleteContact.length == 0 && user[0].deleteExistingContact.length == 0)
         {
         this.newMessages = 0;
         this.notRead = user[0].message;

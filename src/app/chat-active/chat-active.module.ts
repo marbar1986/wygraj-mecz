@@ -7,6 +7,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AddContactComponent } from '../add-contact';
 import { SharedModule } from '../Shared/shared.module';
 import { DeleteContactComponent } from '../delete-contact';
+import { DeleteExistingContactComponent } from '../delete-existing-contact';
+import { ConfirmDeleteExistingContactComponent } from '../confirm-delete-existing-contact';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { DeleteContactComponent } from '../delete-contact';
   ,
   entryComponents:[
     AddContactComponent,
-    DeleteContactComponent
+    DeleteContactComponent,
+    DeleteExistingContactComponent,
+    ConfirmDeleteExistingContactComponent
   ]
 })
 
