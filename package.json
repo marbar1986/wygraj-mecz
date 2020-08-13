@@ -24,12 +24,13 @@
     "lodash": "^4.17.19",
     "ngx-bootstrap": "^5.1.0",
     "rxjs": "~6.3.3",
+    "serialize-javascript": "^3.1.0",
     "tslib": "^1.9.0",
     "websocket-extensions": "^0.1.4",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.901.7",
+    "@angular-devkit/build-angular": "^0.1000.5",
     "@angular/cli": "~7.3.9",
     "@angular/compiler-cli": "^9.1.0",
     "@angular/language-service": "~7.2.0",
