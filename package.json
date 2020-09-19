@@ -26,6 +26,7 @@
     "lodash": "^4.17.19",
     "ngx-bootstrap": "^5.1.0",
     "node-fetch": "^2.6.1",
+    "node-forge": "^0.10.0",
     "rxjs": "~6.3.3",
     "serialize-javascript": "^3.1.0",
     "tslib": "^1.9.0",
